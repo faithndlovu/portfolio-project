@@ -54,3 +54,45 @@ h1 {
   padding: 10px;
   margin: 0px ;
 }
+
+p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.container {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  flex-direction:column;
+  line-height: 1.4;
+  max-width: 500px;
+  margin: 0 auto;
+  
+}
+.text-center {
+  text-align: center
+}
+
+.text-muted {
+  color: #6c757d
+}
+
+@media(max-width: 900px) {
+  .proj-desciption {
+      padding: 0;
+      text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .container, .container-md, .container-sm {
+      max-width: 720px;
+  }
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
