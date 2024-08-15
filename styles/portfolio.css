@@ -1,4 +1,4 @@
-root {
+:root {
   --branding-color: #6c63ff;
   --secondary-color: #f9f7fe;
   --heading-font-family: "Playfair Display", serif;
@@ -30,12 +30,13 @@ h1 {
     margin: 0;
     color: #272142;
   }
+  
   .mypage {
-    background-color:beige;
     text-align: center;
     padding: 160px 20px;
 
   }
+ 
   h1 {
     font-size: 96px;
 }
@@ -54,8 +55,16 @@ h1 {
   padding: 10px;
   margin: 0px ;
 }
+.sentence p{
+  font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #272142;
+}
+  
 
-p {
+.mb-5 p
+{
   font-weight: normal;
   font-size: 16px;
   line-height: 30px;
@@ -74,10 +83,6 @@ p {
       padding: 0;
       text-align: center;
   }
-  .about-me{
-    text-align: center;
-    padding: 160px 20px;
-  }
   
   }
 
@@ -87,6 +92,7 @@ p {
       max-width: 720px;
   }
 }
+
 .img-fluid {
   max-width: 100%;
   height: auto;
