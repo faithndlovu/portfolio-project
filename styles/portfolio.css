@@ -74,7 +74,13 @@ p {
       padding: 0;
       text-align: center;
   }
-}
+  .about-me{
+    text-align: center;
+    padding: 160px 20px;
+  }
+  
+  }
+
 
 @media (min-width: 768px) {
   .container, .container-md, .container-sm {
@@ -85,3 +91,18 @@ p {
   max-width: 100%;
   height: auto;
 }
+
+.about-me-content{
+ margin: 30px; 
+}
+
+.about-me h1{
+font-size: 64px;
+line-height: 80px;
+}
+
+ .about-me h2{
+  font-size: 18px;
+  font-family: var(--default-font-family);
+ }
+
