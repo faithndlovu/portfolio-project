@@ -13,6 +13,11 @@ h1, h2, h3, h4, h5 {
 
 }
 
+h4{
+
+  font-size: 26px;
+}
+
 h1 {
     color: black;
     font-family: "Playfair Display", serif;
@@ -34,6 +39,7 @@ h1 {
   .mypage {
     text-align: center;
     padding: 160px 20px;
+    background: var(--secondary-color);
 
   }
  
@@ -56,9 +62,9 @@ h1 {
   margin: 0px ;
 }
 .sentence p{
-  font-size: 24px;
-    font-weight: bold;
-    margin: 0;
+  font-weight: normal;
+  font-size: 16px;
+    line-height: 30px;
     color: #272142;
 }
   
@@ -83,13 +89,13 @@ h1 {
 }
 
 nav{
-  padding: 20px 0;
-  width: 100%;
+  padding:  0;
+  margin: 20px;
 }
 
 nav ul{
   padding:0;
-  margin: 0;
+
 }
 
 
@@ -163,3 +169,41 @@ line-height: 80px;
   font-size: 14px;
 }
 
+footer{
+  margin: 60px 0;
+}
+
+footer .email-link{
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  text-align: center;
+
+}
+footer .social-links a{
+  margin: 0 20px;
+  color:var(--branding-color);
+  background: var(--secondary-color);
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 100ms ease-in-out;
+}
+
+footer .social-links a:hover{
+  color: white;
+  background: var(--branding-color);
+}
+
+footer .email-link:hover{
+  color: var(--branding-color);
+}
+
+footer .contact-box{
+  background: var(--secondary-color);
+  padding: 30px 120px ;
+  border-radius: 20px;
+}
+footer .contact-box p{
+  margin: 0;
+}
