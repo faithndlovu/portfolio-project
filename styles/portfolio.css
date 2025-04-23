@@ -131,12 +131,6 @@ nav li.active a{
   }
 
 
-@media (min-width: 768px) {
-  .container, .container-md, .container-sm {
-      max-width: 720px;
-  }
-}
-
 .about-me{
   padding: 60px 20px;
   text-align: center;
