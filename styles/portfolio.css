@@ -3,7 +3,18 @@
   --secondary-color: #f9f7fe;
   --heading-font-family: "Playfair Display", serif;
   --default-font-family: "Poppins", sans-serif;
+  --text-color: #272142;
+  --background-color: #ffffff;
+  --card-background: #f9f7fe;
+  --muted-text: #6c757d;
+}
 
+[data-theme="dark"] {
+  --text-color: #ffffff;
+  --background-color: #1a1a1a;
+  --card-background: #2d2d2d;
+  --secondary-color: #2d2d2d;
+  --muted-text: #cccccc;
 }
 
 h1, h2, h3, h4, h5 {
@@ -110,12 +121,28 @@ nav a{
 text-decoration: none;
 color:#272142;
 transition: all 100ms ease-in-out;
-
+position: relative;
 }
 
 nav a:hover,
 nav li.active a{
   color: var(--branding-color) ;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--branding-color);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav li.active a::after {
+  width: 100%;
 }
 
 @media(max-width: 900px) {

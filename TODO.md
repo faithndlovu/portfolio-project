@@ -23,8 +23,8 @@
 - [ ] Validate HTML and CSS
 
 ## Low Priority
-- [ ] Add animations or transitions
-- [ ] Implement dark mode toggle
+- [x] Add animations or transitions
+- [x] Implement dark mode toggle
 - [ ] Add contact form functionality
 - [ ] Integrate with a CMS or backend
 - [ ] Add analytics tracking
