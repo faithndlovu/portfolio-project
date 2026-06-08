@@ -3,146 +3,220 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="About Faith. Faith is a professionally trained front-end engineer based in Zimbabwe">
-    <title>Everything about the Front-end developer Faith L Ndlovu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About Faith Lubelihle Ndlovu – an IT Graduate and web developer based in Zimbabwe."
+    />
+    <title>About | Faith Lubelihle Ndlovu</title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
     ></script>
     <script
       src="https://kit.fontawesome.com/ddc3ee268a.js"
       crossorigin="anonymous"
     ></script>
+
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="styles/portfolio.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <script src="script.js"></script>
   </head>
+
   <body>
-    <div class="container">
-      <nav class="d-flex justify-content-between">
-        <a href="/" title="Homepage">
-      
+    <!-- NAVIGATION -->
+    <header class="site-header">
+      <div class="container">
+        <nav
+          class="navbar-custom d-flex justify-content-between align-items-center"
+        >
+          <a href="index.html" class="brand">Faith<span>.</span></a>
+
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" title="Homepage">Home</a></li>
+            <li class="active"><a href="about.html" title="About Faith">About</a></li>
+            <li><a href="work.html" title="Faith's Work">Work</a></li>
+            <li><a href="contact.html" title="Contact Faith">Contact</a></li>
+          </ul>
+
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <main class="about-me container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 reveal">
+          <div class="about-card">
+            <h1>About Me</h1>
+            <h2>Web Developer &amp; IT Graduate</h2>
+
+            <p class="intro">
+              I am a results-driven IT professional based in Harare, Zimbabwe,
+              holding a National Diploma in Information Technology and a passion
+              for building user-friendly digital solutions.
+            </p>
+
+            <p>
+              I specialize in front-end development with HTML, CSS, JavaScript,
+              and React, with additional experience in PHP, Laravel, Flutter,
+              and MySQL. I enjoy turning ideas into clean, responsive, and
+              practical applications.
+            </p>
+
+            <p>
+              My background combines software development with real-world
+              technical support and infrastructure experience, strengthened
+              through my internship at the National University of Science and
+              Technology (NUST).
+            </p>
+
+            <div class="about-highlights">
+              <span>Web Development</span>
+              <span>Laravel &amp; PHP</span>
+              <span>React &amp; JavaScript</span>
+              <span>Flutter &amp; Dart</span>
+              <span>IT Support</span>
+              <span>Problem Solving</span>
+            </div>
+
+            <div class="about-buttons">
+              <a
+                href="documents/Faith L Ndlovu CV.pdf"
+                class="btn btn-branding"
+                target="_blank"
+              >
+                Download CV
+              </a>
+              <a href="work.html" class="btn btn-branding-outline">
+                View Projects
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="profile-card">
+            <img src="images/faith.jpeg" alt="Faith Lubelihle Ndlovu" />
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <section class="resume-section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Career</p>
+          <h2>Experience</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-meta">June 2024 – May 2025</div>
+            <h3>IT Intern</h3>
+            <p class="timeline-org">
+              National University of Science and Technology (NUST)
+            </p>
+            <ul class="timeline-points">
+              <li>Deployed and configured 500+ desktops and laptops in line with IT standards.</li>
+              <li>Delivered front-line technical support, resolving 20+ user issues daily.</li>
+              <li>Assisted with server, switch, access point, and fibre infrastructure maintenance.</li>
+              <li>Managed user accounts and conducted training on newly developed systems.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION & CERTIFICATIONS -->
+      <section class="resume-section reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Background</p>
+          <h2>Education &amp; Certifications</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="resume-card">
+              <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+              <ul class="timeline-points">
+                <li>
+                  <strong>National Diploma in Information Technology</strong><br />
+                  Bulawayo Polytechnic &mdash; Completed 2025
+                </li>
+                <li>
+                  <strong>National Certificate in Information Technology</strong><br />
+                  Bulawayo Polytechnic &mdash; Completed 2023
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="resume-card">
+              <h3><i class="fas fa-certificate"></i> Certifications</h3>
+              <ul class="timeline-points">
+                <li>SheCodes &mdash; Junior Front-End Developer</li>
+                <li>Cisco &mdash; Introduction to Cybersecurity</li>
+                <li>National Diploma &amp; Certificate in Information Technology</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="container">
+      <div
+        class="contact-box d-flex justify-content-between align-items-center mb-5 d-none d-md-flex"
+      >
+        <div>
+          <h3>Work Inquiry</h3>
+          <p class="text-muted mb-0">Let's work together</p>
+        </div>
+        <div>
+          <a href="contact.html" class="btn btn-branding">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center mb-4">
+        <a href="mailto:nfaithlubelihle@gmail.com" class="email-link">
+          nfaithlubelihle@gmail.com
         </a>
-      <ul>
-        <li>
-          <a href="/" title="Homepage"> Home </a>
-        </li>
-        <li class="active">
-          <a href="about.html" title="About Faith"> About</a>
-        </li>
-        <li>
-          <a href="work.html" title="Faith's work" > Work</a>
-        </li>
-         <li>
-          <a href="contact.html" title="Contact Faith"> Contact</a>
-        </li>
-      </ul>
-      </nav>
-        </div>
-   <div class="about-me container">
-  <div class="row align-items-center">
-
-    <div class="col-lg-6">
-      <div class="about-card">
-
-        <h1>About Me</h1>
-        <h2>Web Developer & IT Graduate</h2>
-
-        <p class="intro">
-          I am an IT Graduate holding a National Diploma in Information Technology 
-          with a strong interest in web development and building practical digital solutions.
-        </p>
-
-        <p>
-          I specialize in front-end development using HTML, CSS, JavaScript, and React, 
-          with additional experience in PHP, Laravel, and MySQL.
-        </p>
-
-        <p>
-          My background combines both development and technical support experience, 
-          strengthened through my internship at the National University of Science 
-          and Technology.
-        </p>
-
-        <div class="about-highlights">
-          <span>Web Development</span>
-          <span>Laravel & PHP</span>
-          <span>React & JavaScript</span>
-          <span>Problem Solving</span>
-        </div>
-
-        <div class="about-buttons">
-          <a href="documents/Faith L Ndlovu CV & Cetificates.pdf" class="btn btn-branding">
-            Download CV
-          </a>
-
-          <a href="work.html" class="btn btn-branding-outline">
-            View Projects
-          </a>
-        </div>
-
       </div>
-    </div>
 
-    <div class="col-lg-6">
-      <div class="profile-card">
-        <img src="images/faith.jpeg" alt="Faith Lubelihle Ndlovu">
+      <div class="social-links d-flex justify-content-center mb-4">
+        <a href="https://github.com/faithndlovu" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
       </div>
-    </div>
 
-  </div>
-</div>
-<footer class="container">
-
-  <div class="contact-box d-flex justify-content-between mb-5 d-none d-md-flex">
-    <div>
-      <h3>Work Inquiry</h3>
-      <p class="text-muted">Let's work together</p>
-    </div>
-
-    <div>
-      <a href="contact.html" class="btn btn-branding mt-3">
-        Contact me
-      </a>
-    </div>
-  </div>
-
-  <div class="d-flex justify-content-center mb-3">
-    <a href="mailto:nfaithlubelihle@gmail.com" class="email-link">
-      nfaithlubelihle@gmail.com
-    </a>
-  </div>
-
-  <div class="social-links d-flex justify-content-center mb-3">
-    <a href="https://github.com/faithndlovu" target="_blank">
-      <i class="fab fa-github"></i>
-    </a>
-
-    <a href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b" target="_blank">
-      <i class="fab fa-linkedin"></i>
-    </a>
-  </div>
-
-  <p class="text-center">
-    This portfolio was coded by Faith Lubelihle Ndlovu and is 
-    <a href="https://github.com/faithndlovu/portfolio-project" target="_blank">
-      open-sourced
-    </a>
-  </p>
-
-</footer>
-    </div>
-</body>
+      <p class="text-center text-muted">
+        Designed &amp; developed by Faith Lubelihle Ndlovu &copy; 2026.
+      </p>
+    </footer>
+  </body>
 </html>

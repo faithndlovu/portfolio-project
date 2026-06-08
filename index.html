@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Faith Lubelihle Ndlovu – IT Graduate & Web Developer based in Zimbabwe" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Faith Lubelihle Ndlovu – IT Graduate & Web Developer based in Zimbabwe, building clean interfaces and practical web applications."
+    />
+    <meta
+      name="keywords"
+      content="Faith Ndlovu, Web Developer, Laravel Developer, Front-end Developer, Zimbabwe"
+    />
+    <meta name="author" content="Faith Lubelihle Ndlovu" />
 
     <title>Faith Lubelihle Ndlovu | Web Developer</title>
 
@@ -12,214 +21,396 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
-
     <script
       src="https://kit.fontawesome.com/ddc3ee268a.js"
       crossorigin="anonymous"
     ></script>
 
-    <script src="script.js"></script>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="styles/portfolio.css" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Faith Ndlovu, Web Developer, Laravel Developer, Front-end Developer, Zimbabwe" />
-    <meta name="author" content="Faith Lubelihle Ndlovu" />
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <script src="script.js"></script>
   </head>
 
   <body>
-    <header>
+    <!-- NAVIGATION -->
+    <header class="site-header">
       <div class="container">
-        <nav class="d-flex justify-content-between">
-          <ul>
-            <li class="active">
-              <a href="/" title="Homepage">Home</a>
-            </li>
-            <li>
-              <a href="about.html" title="About Faith">About</a>
-            </li>
-            <li>
-              <a href="work.html" title="Faith's Work">Work</a>
-            </li>
-            <li>
-              <a href="contact.html" title="Contact Faith">Contact</a>
-            </li>
+        <nav
+          class="navbar-custom d-flex justify-content-between align-items-center"
+        >
+          <a href="index.html" class="brand">Faith<span>.</span></a>
+
+          <ul class="nav-links" id="nav-links">
+            <li class="active"><a href="index.html" title="Homepage">Home</a></li>
+            <li><a href="about.html" title="About Faith">About</a></li>
+            <li><a href="work.html" title="Faith's Work">Work</a></li>
+            <li><a href="contact.html" title="Contact Faith">Contact</a></li>
           </ul>
+
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+
+          <button
+            id="menu-toggle"
+            class="menu-toggle"
+            aria-label="Toggle menu"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
         </nav>
       </div>
     </header>
 
     <main>
-
       <!-- HERO SECTION -->
       <section class="hero">
-        <div class="container text-center">
-
-          <p class="hero-greeting">Hello, I'm</p>
-
-          <h1>Faith Lubelihle Ndlovu</h1>
-
-          <h2>
-            IT Graduate • Web Developer 
-          </h2>
-
-      
-
-        </div>
-      </section>
-
-      <!-- INTRO TEXT -->
-      <section class="intro-section">
-        <div class="container text-center">
-          <p>
-           A selection of projects showcasing my experience in designing 
-clean interfaces, building dynamic applications, and developing 
-practical real-world solutions.
-          </p>
-        </div>
-      </section>
-
-      <!--  PROJECTS -->
-      <section class="projects">
         <div class="container">
+          <p class="hero-greeting">Hello, I'm</p>
+          <h1 class="gradient-text">Faith Lubelihle Ndlovu</h1>
+          <h2>Web &amp; Mobile Developer &bull; IT Support</h2>
+          <p class="hero-tagline">
+            I'm an IT graduate and developer based in Harare, Zimbabwe. I craft
+            clean interfaces, build dynamic web and mobile applications, and turn
+            real-world problems into practical, reliable software.
+          </p>
 
-          <!-- SATS -->
-          <article class="row project-item">
+          <div class="hero-buttons">
+            <a href="work.html" class="btn btn-branding">View My Work</a>
+            <a href="contact.html" class="btn btn-branding-outline"
+              >Get In Touch</a
+            >
+          </div>
 
-            <div class="col-lg-6">
-              <img src="images/sats.png" class="img-fluid project-image" 
-                   alt="Student Attachment Tracking System screenshot" />
+          <div class="hero-social">
+            <a
+              href="https://github.com/faithndlovu"
+              target="_blank"
+              aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="mailto:nfaithlubelihle@gmail.com" aria-label="Email"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section class="stats-section reveal">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Devices Deployed</div>
             </div>
+            <div class="stat-card">
+              <div class="stat-number">6+</div>
+              <div class="stat-label">Projects Built</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">1+</div>
+              <div class="stat-label">Year Experience</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">10+</div>
+              <div class="stat-label">Technologies</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <div class="col-lg-6">
-              <div class="project-content">
+      <!-- SERVICES / WHAT I DO -->
+      <section class="services-section reveal">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">What I Do</p>
+            <h2>Services &amp; Expertise</h2>
+            <p>
+              From responsive front-ends to full-stack systems and reliable IT
+              support — I bridge clean design with solid engineering.
+            </p>
+          </div>
 
-                <h3>Student Attachment Tracking System (SATS)</h3>
-
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="service-card">
+                <span class="service-icon"><i class="fas fa-laptop-code"></i></span>
+                <h3>Web Development</h3>
                 <p>
-                  A full-stack web application built using Laravel and MySQL 
-                  designed to manage student attachments, placements, and reporting workflows.
+                  Responsive, accessible websites and web apps built with modern
+                  front-end tools and clean, maintainable code.
                 </p>
-
-                <a href="work.html" class="project-link">
-                  View Project Details →
-                </a>
-
+                <div class="service-tags">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span
+                  ><span>React</span>
+                </div>
               </div>
             </div>
 
+            <div class="col-md-4">
+              <div class="service-card">
+                <span class="service-icon"><i class="fas fa-mobile-screen-button"></i></span>
+                <h3>Mobile & Backend</h3>
+                <p>
+                  Cross-platform mobile apps with Flutter and robust back-ends
+                  using PHP, Laravel, and MySQL for real-world systems.
+                </p>
+                <div class="service-tags">
+                  <span>Flutter</span><span>Dart</span><span>Laravel</span
+                  ><span>MySQL</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="service-card">
+                <span class="service-icon"><i class="fas fa-headset"></i></span>
+                <h3>IT Support</h3>
+                <p>
+                  Hands-on technical support, hardware deployment, and network
+                  troubleshooting — keeping systems running smoothly.
+                </p>
+                <div class="service-tags">
+                  <span>Networking</span><span>Hardware</span
+                  ><span>Windows</span><span>Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TECH STACK -->
+      <section class="tech-section reveal">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">My Toolkit</p>
+            <h2>Technologies I Work With</h2>
+          </div>
+          <div class="tech-grid">
+            <span class="tech-chip"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="tech-chip"><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span class="tech-chip"><i class="fab fa-js"></i> JavaScript</span>
+            <span class="tech-chip"><i class="fab fa-react"></i> React.js</span>
+            <span class="tech-chip"><i class="fab fa-php"></i> PHP</span>
+            <span class="tech-chip"><i class="fab fa-laravel"></i> Laravel</span>
+            <span class="tech-chip"
+              ><i class="fas fa-mobile-screen"></i> Flutter &amp; Dart</span
+            >
+            <span class="tech-chip"><i class="fas fa-code"></i> VB.NET</span>
+            <span class="tech-chip"><i class="fas fa-database"></i> MySQL</span>
+            <span class="tech-chip"
+              ><i class="fab fa-git-alt"></i> Git &amp; GitHub</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="projects">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Portfolio</p>
+            <h2>Selected Work</h2>
+            <p>
+              A selection of projects showcasing my experience designing clean
+              interfaces, building dynamic applications, and developing
+              practical real-world solutions.
+            </p>
+          </div>
+
+          <!-- FAITHFLOW POS -->
+          <article class="row project-item reveal">
+            <div class="col-lg-6 order-lg-2">
+              <img
+                src="images/faithflow.png"
+                class="img-fluid project-image"
+                alt="FaithFlow Point of Sale sign-in screen"
+              />
+            </div>
+            <div class="col-lg-6 order-lg-1">
+              <div class="project-content">
+                <h3>FaithFlow — Point of Sale System</h3>
+                <p>
+                  A full point-of-sale web application with role-based access for
+                  administrators, managers, cashiers, and stock controllers —
+                  handling sales, inventory, and store management. Deployed live
+                  on Vercel.
+                </p>
+                <div class="service-tags mb-3">
+                  <span>Web App</span><span>POS System</span
+                  ><span>Role-Based Access</span>
+                </div>
+                <a
+                  href="https://faithflow-pos.vercel.app/"
+                  target="_blank"
+                  class="project-link"
+                >
+                  View Live Demo &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SATS -->
+          <article class="row project-item reveal">
+            <div class="col-lg-6">
+              <img
+                src="images/sats.png"
+                class="img-fluid project-image"
+                alt="Student Attachment Tracking System screenshot"
+              />
+            </div>
+            <div class="col-lg-6">
+              <div class="project-content">
+                <h3>Student Attachment Tracking System (SATS)</h3>
+                <p>
+                  A full-stack web application built with Laravel and MySQL to
+                  manage student attachments, placements, supervisor feedback,
+                  and reporting workflows — streamlining a previously manual
+                  process.
+                </p>
+                <div class="service-tags mb-3">
+                  <span>Laravel</span><span>MySQL</span><span>Full-Stack</span>
+                </div>
+                <a
+                  href="https://github.com/faithndlovu/student-attachment-tracking-system"
+                  target="_blank"
+                  class="project-link"
+                >
+                  View Project Details &rarr;
+                </a>
+              </div>
+            </div>
           </article>
 
           <!-- POEM GENERATOR -->
-          <article class="row project-item">
-
+          <article class="row project-item reveal">
             <div class="col-lg-6 order-lg-2">
-              <img src="images/poemgenerator.png" class="img-fluid project-image" 
-                   alt="AI Poem Generator screenshot" />
+              <img
+                src="images/poemgenerator.png"
+                class="img-fluid project-image"
+                alt="AI Poem Generator screenshot"
+              />
             </div>
-
             <div class="col-lg-6 order-lg-1">
               <div class="project-content">
-
                 <h3>AI Poem Generator</h3>
-
                 <p>
-                  A front-end application integrating an AI API to dynamically 
-                  generate creative text responses based on user prompts.
+                  A front-end application that integrates an AI API to generate
+                  creative, context-aware text responses from user prompts, with
+                  a clean and responsive interface.
                 </p>
-
-                <a href="https://github.com/faithndlovu/Poem-generator" target="_blank" class="project-link">
-                  View Project →
+                <div class="service-tags mb-3">
+                  <span>JavaScript</span><span>AI API</span><span>UI Design</span>
+                </div>
+                <a
+                  href="https://github.com/faithndlovu/Poem-generator"
+                  target="_blank"
+                  class="project-link"
+                >
+                  View Project &rarr;
                 </a>
-
               </div>
             </div>
-
           </article>
 
           <!-- TRAVEL PROJECT -->
-          <article class="row project-item">
-
+          <article class="row project-item reveal">
             <div class="col-lg-6">
-              <img src="images/travel.png" class="img-fluid project-image" 
-                   alt="Victoria Falls Travel Project screenshot" />
+              <img
+                src="images/travel.png"
+                class="img-fluid project-image"
+                alt="Victoria Falls Travel Project screenshot"
+              />
             </div>
-
             <div class="col-lg-6">
               <div class="project-content">
-
                 <h3>Victoria Falls Travel Project</h3>
-
                 <p>
-                  A responsive travel website showcasing destination content, 
-                  layout design, and modern UI presentation.
+                  A responsive travel website showcasing destination content
+                  for Victoria Falls, with thoughtful layout, imagery, and a
+                  modern, mobile-friendly UI.
                 </p>
-
-                <a href="https://github.com/faithndlovu/vic-falls-travel-project" target="_blank" class="project-link">
-                  View Project →
+                <div class="service-tags mb-3">
+                  <span>HTML</span><span>CSS</span><span>Responsive</span>
+                </div>
+                <a
+                  href="https://github.com/faithndlovu/vic-falls-travel-project"
+                  target="_blank"
+                  class="project-link"
+                >
+                  View Project &rarr;
                 </a>
-
               </div>
             </div>
-
           </article>
 
           <!-- DICTIONARY -->
-          <article class="row project-item">
-
+          <article class="row project-item reveal">
             <div class="col-lg-6 order-lg-2">
-              <img src="images/dictionary.png" class="img-fluid project-image" 
-                   alt="Dictionary App screenshot" />
+              <img
+                src="images/dictionary.png"
+                class="img-fluid project-image"
+                alt="Dictionary App screenshot"
+              />
             </div>
-
             <div class="col-lg-6 order-lg-1">
               <div class="project-content">
-
                 <h3>Dictionary Application</h3>
-
                 <p>
-                  A dynamic web application integrating an API to retrieve 
-                  real-time word meanings, phonetics, and related data.
+                  A dynamic React application that integrates a dictionary API
+                  to retrieve real-time word meanings, phonetics, example usage,
+                  and related results as you search.
                 </p>
-
-                <a href="https://github.com/faithndlovu/dictionary-proj" target="_blank" class="project-link">
-                  View Project →
+                <div class="service-tags mb-3">
+                  <span>React</span><span>API Integration</span><span>JavaScript</span>
+                </div>
+                <a
+                  href="https://github.com/faithndlovu/dictionary-proj"
+                  target="_blank"
+                  class="project-link"
+                >
+                  View Project &rarr;
                 </a>
-
               </div>
             </div>
-
           </article>
-
         </div>
       </section>
-
     </main>
 
-    <!--  FOOTER -->
+    <!-- FOOTER -->
     <footer class="container">
-
-      <div class="contact-box d-flex justify-content-between mb-5 d-none d-md-flex">
+      <div
+        class="contact-box d-flex justify-content-between align-items-center mb-5 d-none d-md-flex"
+      >
         <div>
           <h3>Work Inquiry</h3>
-          <p class="text-muted">Let's work together</p>
+          <p class="text-muted mb-0">Let's work together</p>
         </div>
-
         <div>
-          <a href="contact.html" class="btn btn-branding">
-            Contact Me
-          </a>
+          <a href="contact.html" class="btn btn-branding">Contact Me</a>
         </div>
       </div>
 
@@ -230,20 +421,21 @@ practical real-world solutions.
       </div>
 
       <div class="social-links d-flex justify-content-center mb-4">
-        <a href="https://github.com/faithndlovu" target="_blank">
+        <a href="https://github.com/faithndlovu" target="_blank" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
-
-        <a href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
 
       <p class="text-center text-muted">
-        This portfolio was designed and developed by Faith Lubelihle Ndlovu.
+        Designed &amp; developed by Faith Lubelihle Ndlovu &copy; 2026.
       </p>
-
     </footer>
-
   </body>
 </html>
