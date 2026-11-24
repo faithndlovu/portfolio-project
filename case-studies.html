@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Technical case studies by Faith Lubelihle Ndlovu – how FaithFlow POS, an e-learning platform and a retail shop management app were designed and built."
+      content="Technical case studies by Faith Lubelihle Ndlovu – how FaithFlow POS, FAYORA, TaskFlow, SATS and an e-learning platform were designed and built."
     />
     <title>Case Studies | Faith Lubelihle Ndlovu</title>
 
@@ -45,11 +45,12 @@
           <a href="index.html" class="brand">Faith<span>.</span></a>
 
           <ul class="nav-links" id="nav-links">
-            <li><a href="index.html" title="Homepage">Home</a></li>
-            <li><a href="about.html" title="About Faith">About</a></li>
-            <li><a href="work.html" title="Faith's Work">Work</a></li>
-            <li class="active"><a href="case-studies.html" title="Technical case studies">Case Studies</a></li>
-            <li><a href="contact.html" title="Contact Faith">Contact</a></li>
+            <li><a href="index.html" data-nav="home">Home</a></li>
+            <li><a href="index.html#about" data-nav="about">About</a></li>
+            <li class="active"><a href="work.html" data-nav="projects">Projects</a></li>
+            <li><a href="index.html#skills" data-nav="skills">Skills</a></li>
+            <li><a href="index.html#experience" data-nav="experience">Experience</a></li>
+            <li><a href="index.html#contact" data-nav="contact">Contact</a></li>
             <li class="nav-cv-item">
               <a href="documents/faith-lubelihle-ndlovu-cv.pdf" class="nav-cv" download
                 ><i class="fas fa-download"></i> CV</a
@@ -72,17 +73,19 @@
         <p class="eyebrow">Technical Case Studies</p>
         <h1>How I <span class="gradient-text">design &amp; build</span> systems</h1>
         <p>
-          A closer look at three systems — the problem, the architecture, the
+          A closer look at five systems — the problem, the architecture, the
           decisions behind it, and what was delivered.
         </p>
         <div class="cs-jump">
           <a href="#faithflow">FaithFlow POS</a>
+          <a href="#fayora">FAYORA Finance</a>
+          <a href="#taskflow">TaskFlow</a>
           <a href="#elearning">E-Learning Platform</a>
-          <a href="#retail-app">Retail Shop App</a>
+          <a href="#sats">SATS</a>
         </div>
       </div>
 
-      <!-- ============ CASE STUDY 1: FAITHFLOW ============ -->
+      <!-- ============ CASE STUDY: FAITHFLOW ============ -->
       <article class="case-study" id="faithflow">
         <header class="cs-head reveal">
           <span class="cs-num">01</span>
@@ -162,10 +165,188 @@
         </div>
       </article>
 
-      <!-- ============ CASE STUDY 2: E-LEARNING ============ -->
-      <article class="case-study" id="elearning">
+      <!-- ============ CASE STUDY: FAYORA ============ -->
+      <article class="case-study" id="fayora">
         <header class="cs-head reveal">
           <span class="cs-num">02</span>
+          <div>
+            <p class="card-kicker">Mobile · Full Stack · Solo build</p>
+            <h2>FAYORA — Personal Finance Tracker</h2>
+            <div class="work-tags mb-0">
+              <span>React Native</span><span>Expo</span><span>TypeScript</span><span>Expo Router</span
+              ><span>Node.js</span><span>Express 5</span><span>SQLite</span><span>JWT</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="row g-4">
+          <div class="col-lg-7 reveal">
+            <div class="cs-block">
+              <h3><i class="fas fa-bullseye"></i> The problem</h3>
+              <p>
+                People want to see where their money goes, stay within a budget
+                and save towards goals, from their phone. Money is often held
+                in more than one currency (US dollars, ZiG, pula), so the app
+                has to keep those apart rather than blend them into one
+                misleading total.
+              </p>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-user-gear"></i> My role</h3>
+              <p>
+                I built both halves myself: the Expo React Native app and the
+                Express REST API behind it, including the finance calculations,
+                authentication, tests and deployment.
+              </p>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-diagram-project"></i> Key design decisions</h3>
+              <ul class="timeline-points">
+                <li><strong>Money is stored as whole numbers.</strong> Amounts are saved as integers in each currency's smallest unit (including currencies with zero or three decimal places), so totals never suffer floating-point rounding errors.</li>
+                <li><strong>Currencies are never mixed.</strong> Every transaction, budget and goal carries its own currency. Amounts are never converted or added across currencies, and dashboards show one currency at a time. A goal's currency is locked once it's created, and older records were migrated by giving them the user's profile currency.</li>
+                <li><strong>A pure, unit-tested finance module.</strong> All the maths lives in <code>finance.js</code>, separate from the routes, so it can be tested on its own (see the formulas below).</li>
+                <li><strong>Secure sessions on the phone.</strong> The JWT is kept in the device keychain or keystore with <code>expo-secure-store</code>. Password-reset links are single-use, expire after an hour and sign out existing sessions.</li>
+                <li><strong>Safe by default in production.</strong> The API refuses to start without a strong <code>JWT_SECRET</code> and an explicit CORS allowlist, and the demo seed script is blocked in production.</li>
+              </ul>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-calculator"></i> How the numbers are worked out</h3>
+              <div class="endpoint-list">
+                <div><span class="verb">savings</span>Savings rate = (income − expenses) ÷ income</div>
+                <div><span class="verb">forecast</span>Projected spend = daily average so far × days in the month</div>
+                <div><span class="verb alt">goals</span>Needed per month = remaining amount ÷ whole months to the deadline</div>
+                <div><span class="verb alt">budgets</span><code>ok</code> below 80% · <code>warning</code> from 80% · <code>over</code> above 100%</div>
+              </div>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-list-check"></i> What it does</h3>
+              <div class="feature-grid">
+                <span><i class="fas fa-arrow-right-arrow-left"></i> Income &amp; expenses</span>
+                <span><i class="fas fa-gauge-high"></i> Budgets with colour warnings</span>
+                <span><i class="fas fa-piggy-bank"></i> Savings goals &amp; contributions</span>
+                <span><i class="fas fa-chart-pie"></i> Spending donut &amp; 6-month trend</span>
+                <span><i class="fas fa-coins"></i> ZiG, pula, USD &amp; more</span>
+                <span><i class="fas fa-tags"></i> Custom categories</span>
+                <span><i class="fas fa-magnifying-glass"></i> Search, filter, daily totals</span>
+                <span><i class="fas fa-user-shield"></i> Admin user management</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 reveal">
+            <div class="cs-side">
+              <div class="work-image phone-stage cs-phone mb-4">
+                <div class="phone-device">
+                  <span class="phone-notch"></span>
+                  <img src="images/fayora-phone.jpg" alt="FAYORA sign-in screen on a phone" loading="lazy" />
+                </div>
+              </div>
+              <h3 class="cs-side-title">Architecture</h3>
+              <div class="arch-flow">
+                <div class="arch-node"><i class="fas fa-mobile-screen-button"></i><strong>Expo React Native app</strong><small>Expo Router · secure-store · SVG charts · web on Vercel, Android via EAS</small></div>
+                <div class="arch-arrow"><span>REST · JSON · Bearer JWT</span></div>
+                <div class="arch-node"><i class="fab fa-node-js"></i><strong>Express 5 API</strong><small>auth · transactions · budgets · goals · summary · hosted on Railway</small></div>
+                <div class="arch-arrow"><span>node:sqlite</span></div>
+                <div class="arch-node"><i class="fas fa-database"></i><strong>SQLite</strong><small>Persistent volume · amounts in minor units</small></div>
+              </div>
+              <div class="d-flex gap-2 mt-4">
+                <a href="https://personal-finance-tracker-mobile.vercel.app" target="_blank" rel="noopener" class="btn btn-branding flex-fill"
+                  ><i class="fas fa-play me-2"></i>Live demo</a
+                >
+                <a href="https://github.com/faithndlovu/personal-finance-tracker" target="_blank" rel="noopener" class="btn btn-branding-outline flex-fill"
+                  ><i class="fab fa-github me-2"></i>Code</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ CASE STUDY: TASKFLOW ============ -->
+      <article class="case-study" id="taskflow">
+        <header class="cs-head reveal">
+          <span class="cs-num">03</span>
+          <div>
+            <p class="card-kicker">Full Stack · Web App · Workflow engine</p>
+            <h2>TaskFlow — Task Management</h2>
+            <div class="work-tags mb-0">
+              <span>Node.js</span><span>Express 5</span><span>SQLite</span><span>JWT</span
+              ><span>bcryptjs</span><span>Vanilla JS</span><span>Supertest</span><span>Docker</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="row g-4">
+          <div class="col-lg-7 reveal">
+            <div class="cs-block">
+              <h3><i class="fas fa-bullseye"></i> The problem</h3>
+              <p>
+                A team needs work to pass a review before it counts as done.
+                Members shouldn't be able to approve their own tasks, managers
+                need to see what's overdue, and everyone needs a record of who
+                moved what and why.
+              </p>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-diagram-project"></i> Key design decisions</h3>
+              <ul class="timeline-points">
+                <li><strong>The workflow lives on the server.</strong> Status rules sit in their own module, <code>workflow.js</code>. Members can submit work for review, but only managers and admins can approve it, send it back or reopen it. Any other move is rejected with HTTP 422, even if someone drags a card on the Kanban board.</li>
+                <li><strong>The API tells the UI what's allowed.</strong> Fetching a task returns its history, comments and the transitions the current user may make, so the interface only offers valid moves.</li>
+                <li><strong>Permissions kept in one place.</strong> Role middleware (<code>auth.js</code>) handles Admin, Manager and Member, while project- and task-level rules live in <code>access.js</code>. Who can do what is never scattered through the route handlers.</li>
+                <li><strong>A full audit trail.</strong> Every status change is recorded with who made it, when, and an optional note.</li>
+                <li><strong>Small, portable stack.</strong> A no-build vanilla JavaScript front end served by Express, SQLite through Node's built-in <code>node:sqlite</code> (no native modules), and a Docker image deployed on Railway with a persistent volume.</li>
+                <li><strong>Tested.</strong> 11 API integration tests with <code>node:test</code> and Supertest cover authentication, permissions and the workflow rules.</li>
+              </ul>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-list-check"></i> What it does</h3>
+              <div class="feature-grid">
+                <span><i class="fas fa-table-columns"></i> Drag-and-drop Kanban</span>
+                <span><i class="fas fa-folder-tree"></i> Projects &amp; members</span>
+                <span><i class="fas fa-flag"></i> Priorities, due dates, assignees</span>
+                <span><i class="fas fa-clock"></i> Overdue detection</span>
+                <span><i class="fas fa-magnifying-glass"></i> Search &amp; filters</span>
+                <span><i class="fas fa-comments"></i> Task comments</span>
+                <span><i class="fas fa-clock-rotate-left"></i> Status history</span>
+                <span><i class="fas fa-chart-simple"></i> Completion dashboard</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 reveal">
+            <div class="cs-side">
+              <div class="browser-frame mb-4">
+                <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                <img src="images/taskflow.jpg" alt="TaskFlow sign-in screen" loading="lazy" />
+              </div>
+              <h3 class="cs-side-title">The workflow</h3>
+              <div class="arch-flow">
+                <div class="arch-node"><i class="far fa-circle"></i><strong>To do</strong></div>
+                <div class="arch-arrow"><span>assignee starts</span></div>
+                <div class="arch-node"><i class="fas fa-spinner"></i><strong>In progress</strong></div>
+                <div class="arch-arrow"><span>member submits</span></div>
+                <div class="arch-node"><i class="fas fa-magnifying-glass"></i><strong>In review</strong><small>Manager / admin: approve, or send back to In progress</small></div>
+                <div class="arch-arrow"><span>manager approves</span></div>
+                <div class="arch-node"><i class="fas fa-circle-check"></i><strong>Done</strong><small>Managers can reopen</small></div>
+              </div>
+              <p class="cs-note">Invalid moves are rejected by the API with HTTP 422.</p>
+              <div class="d-flex gap-2 mt-4">
+                <a href="https://taskflow-production-production.up.railway.app" target="_blank" rel="noopener" class="btn btn-branding flex-fill"
+                  ><i class="fas fa-play me-2"></i>Live demo</a
+                >
+                <a href="https://github.com/faithndlovu/task-management-app" target="_blank" rel="noopener" class="btn btn-branding-outline flex-fill"
+                  ><i class="fab fa-github me-2"></i>Code</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ CASE STUDY: E-LEARNING ============ -->
+      <article class="case-study" id="elearning">
+        <header class="cs-head reveal">
+          <span class="cs-num">04</span>
           <div>
             <p class="card-kicker">Full Stack · Backend architecture</p>
             <h2>E-Learning Platform</h2>
@@ -234,15 +415,16 @@
         </div>
       </article>
 
-      <!-- ============ CASE STUDY 3: RETAIL SHOP APP ============ -->
-      <article class="case-study" id="retail-app">
+      <!-- ============ CASE STUDY: SATS ============ -->
+      <article class="case-study" id="sats">
         <header class="cs-head reveal">
-          <span class="cs-num">03</span>
+          <span class="cs-num">05</span>
           <div>
-            <p class="card-kicker">Mobile · Backend · Company project</p>
-            <h2>Retail Shop Management App</h2>
+            <p class="card-kicker">Full Stack · Laravel · Multi-role platform</p>
+            <h2>Student Attachment Tracking System (SATS)</h2>
             <div class="work-tags mb-0">
-              <span>Flutter</span><span>Dart</span><span>PHP 8</span><span>PDO</span><span>MySQL</span><span>REST / JSON</span>
+              <span>Laravel 11</span><span>PHP 8.2</span><span>MySQL</span><span>Blade</span
+              ><span>Livewire</span><span>Tailwind CSS</span><span>Pusher</span><span>dompdf</span>
             </div>
           </div>
         </header>
@@ -252,45 +434,76 @@
             <div class="cs-block">
               <h3><i class="fas fa-bullseye"></i> The problem</h3>
               <p>
-                A retail business was tracking stock and sales manually and
-                wanted to digitise stock management, record sales
-                automatically, and see how the shop was performing from a phone.
+                An industrial attachment involves five groups of people:
+                students, host companies, university supervisors, assessors and
+                administrators. Tracking applications, placements, daily
+                attendance, reports and grades through paper and email is slow,
+                and it's hard to prove a student was actually on site.
+              </p>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-user-gear"></i> My role</h3>
+              <p>
+                I designed and developed the full-stack application, covering
+                the database design, authentication, role-based access and the
+                reporting functionality.
               </p>
             </div>
             <div class="cs-block">
               <h3><i class="fas fa-diagram-project"></i> Key design decisions</h3>
               <ul class="timeline-points">
-                <li><strong>Mobile-first with Flutter.</strong> The shop is managed from a phone, so the client is a Flutter app with bottom navigation and a dashboard of summary cards.</li>
-                <li><strong>A lean Core PHP API.</strong> Plain PHP 8 with PDO and MySQL keeps the backend simple to host and maintain, with one endpoint file per action under <code>api/products</code> and <code>api/sales</code>.</li>
-                <li><strong>Sales update stock automatically.</strong> Recording a sale also deducts the stock in the same request, so inventory stays accurate without a separate step.</li>
-                <li><strong>Clean app layers.</strong> The Flutter code is split into <code>config</code>, <code>models</code>, <code>services</code> and <code>screens</code>. Network calls live in the services, keeping screens focused on the UI.</li>
+                <li><strong>One system, five roles.</strong> Role middleware routes each person to their own dashboard (student, company, supervisor, assessor or admin), so everyone only sees the actions that belong to them.</li>
+                <li><strong>Fuzzy company matching.</strong> When a placement names a company, a <code>CompanyMatcher</code> service compares it with companies already on file. It strips suffixes like “Ltd” or “Holdings”, then scores word overlap (40%), edit distance (30%) and Soundex sound-alike similarity (20%), plus small bonuses. Only matches scoring 50 or more are used, and the confidence is stored with the placement. This stops the same company being entered twice under slightly different names, and the matcher has its own unit test.</li>
+                <li><strong>Check-ins with location.</strong> Students check in daily and each check-in records their location. Check-ins are approved or rejected, with daily reminders and alerts for missed or pending check-ins.</li>
+                <li><strong>Event-driven notifications.</strong> Around 25 notification types keep everyone moving: applications, shortlisting, placements accepted or declined, reports reviewed, assessments scheduled and leave requests.</li>
+                <li><strong>Real-time chat.</strong> Messaging uses Laravel events broadcast through Pusher, with live “typing…” and “seen” indicators.</li>
+                <li><strong>Admin safety nets.</strong> Audit logging, data backups, bulk user upload and PDF exports of final reports.</li>
               </ul>
             </div>
             <div class="cs-block">
-              <h3><i class="fas fa-plug"></i> API endpoints</h3>
-              <div class="endpoint-list">
-                <div><span class="verb">products</span><code>create.php</code> Add product with image (multipart)</div>
-                <div><span class="verb">products</span><code>read.php</code> List all products</div>
-                <div><span class="verb">products</span><code>update.php</code> Edit product</div>
-                <div><span class="verb">products</span><code>delete.php</code> Remove product</div>
-                <div><span class="verb alt">sales</span><code>create.php</code> Record sale and deduct stock</div>
-                <div><span class="verb alt">sales</span><code>read.php</code> Sales history (joined with products)</div>
-                <div><span class="verb alt">sales</span><code>summary.php</code> Dashboard totals</div>
+              <h3><i class="fas fa-list-check"></i> What it does</h3>
+              <div class="feature-grid">
+                <span><i class="fas fa-briefcase"></i> Positions &amp; applications</span>
+                <span><i class="fas fa-handshake"></i> Shortlisting &amp; placements</span>
+                <span><i class="fas fa-location-dot"></i> Location check-ins</span>
+                <span><i class="fas fa-file-lines"></i> Reports &amp; feedback</span>
+                <span><i class="fas fa-calendar-xmark"></i> Leave requests</span>
+                <span><i class="fas fa-star-half-stroke"></i> Grading &amp; assessments</span>
+                <span><i class="fas fa-comments"></i> Real-time chat</span>
+                <span><i class="fas fa-file-pdf"></i> PDF final reports</span>
               </div>
             </div>
           </div>
 
           <div class="col-lg-5 reveal">
             <div class="cs-side">
+              <div class="browser-frame mb-4">
+                <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                <img src="images/sats.png" alt="SATS landing page showing portals for students, companies and supervisors" loading="lazy" />
+              </div>
               <h3 class="cs-side-title">Architecture</h3>
               <div class="arch-flow">
-                <div class="arch-node"><i class="fas fa-mobile-screen-button"></i><strong>Flutter App</strong><small>Dashboard · Products · Sales</small></div>
-                <div class="arch-arrow"><span>REST · JSON · multipart images</span></div>
-                <div class="arch-node"><i class="fab fa-php"></i><strong>PHP 8 API</strong><small>PDO · one file per endpoint · image uploads</small></div>
-                <div class="arch-arrow"><span>PDO</span></div>
-                <div class="arch-node"><i class="fas fa-database"></i><strong>MySQL</strong><small>products · sales</small></div>
+                <div class="arch-split">
+                  <div class="arch-node"><i class="fas fa-user-graduate"></i><strong>Students</strong><small>Apply · check in · report</small></div>
+                  <div class="arch-node"><i class="fas fa-building"></i><strong>Companies</strong><small>Post · shortlist · rate</small></div>
+                </div>
+                <div class="arch-split mt-2">
+                  <div class="arch-node"><i class="fas fa-chalkboard-user"></i><strong>Supervisors</strong><small>Monitor · grade</small></div>
+                  <div class="arch-node"><i class="fas fa-user-shield"></i><strong>Admin &amp; assessors</strong><small>Manage · assess</small></div>
+                </div>
+                <div class="arch-arrow"><span>Blade · Livewire · role middleware</span></div>
+                <div class="arch-node arch-layers">
+                  <strong>Laravel 11</strong>
+                  <div class="layer">controllers <small>per role</small></div>
+                  <div class="layer">CompanyMatcher <small>service</small></div>
+                  <div class="layer">events &amp; notifications <small>Pusher · mail</small></div>
+                </div>
+                <div class="arch-arrow"><span>Eloquent</span></div>
+                <div class="arch-node"><i class="fas fa-database"></i><strong>MySQL</strong><small>placements · check-ins · reports · evaluations · audit logs</small></div>
               </div>
-              <p class="cs-note mt-4"><i class="fas fa-lock me-1"></i> Built as a company project. Source code is private.</p>
+              <a href="https://github.com/faithndlovu/student-attachment-tracking-system" target="_blank" rel="noopener" class="btn btn-branding w-100 mt-4"
+                ><i class="fab fa-github me-2"></i>Read the code</a
+              >
             </div>
           </div>
         </div>

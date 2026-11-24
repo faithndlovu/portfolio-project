@@ -39,6 +39,7 @@
 
     <link rel="stylesheet" href="styles/portfolio.css" />
     <script src="projects-data.js"></script>
+    <script src="projects-render.js"></script>
     <script src="script.js"></script>
   </head>
 
@@ -52,11 +53,12 @@
           <a href="index.html" class="brand">Faith<span>.</span></a>
 
           <ul class="nav-links" id="nav-links">
-            <li class="active"><a href="index.html" title="Homepage">Home</a></li>
-            <li><a href="about.html" title="About Faith">About</a></li>
-            <li><a href="work.html" title="Faith's Work">Work</a></li>
-            <li><a href="case-studies.html" title="Technical case studies">Case Studies</a></li>
-            <li><a href="contact.html" title="Contact Faith">Contact</a></li>
+            <li class="active"><a href="#top" data-nav="home">Home</a></li>
+            <li><a href="#about" data-nav="about">About</a></li>
+            <li><a href="work.html" data-nav="projects">Projects</a></li>
+            <li><a href="#skills" data-nav="skills">Skills</a></li>
+            <li><a href="#experience" data-nav="experience">Experience</a></li>
+            <li><a href="#contact" data-nav="contact">Contact</a></li>
             <li class="nav-cv-item">
               <a href="documents/faith-lubelihle-ndlovu-cv.pdf" class="nav-cv" download
                 ><i class="fas fa-download"></i> CV</a
@@ -89,66 +91,57 @@
         <div class="starfield" aria-hidden="true"></div>
         <div class="container hero-layout">
           <div class="hero-copy">
+            <p class="hero-hello">Hi, I'm Faith Ndlovu.</p>
             <h1 class="hero-title">
-              Hi, I'm Faith<br />
-              <span class="gradient-text">Software Developer</span>
+              I build digital products that
+              <span class="gradient-text">solve real problems.</span>
             </h1>
             <p class="hero-tagline">
-              I build clean, reliable web and mobile applications — from
-              gathering requirements to testing and deployment. Specialising in
-              full-stack development with PHP, Laravel, React and Flutter, based
-              in Harare, Zimbabwe.
+              Software Developer specialising in web and mobile application
+              development. I turn ideas and business requirements into
+              functional, user-friendly software.
             </p>
 
+            <ul class="hero-pills" aria-label="Specialisms">
+              <li><i class="fas fa-layer-group"></i> Full-Stack Development</li>
+              <li><i class="fas fa-mobile-screen-button"></i> Mobile Development</li>
+              <li><i class="fas fa-gears"></i> Software Engineering</li>
+            </ul>
+
             <div class="hero-buttons">
-              <a href="#projects" class="btn btn-branding"
-                >View My Work <i class="fas fa-arrow-right ms-2"></i
+              <a href="work.html" class="btn btn-branding"
+                >Explore My Projects <i class="fas fa-arrow-right ms-2"></i
               ></a>
-              <a href="#contact" class="btn btn-branding-outline"
-                >Get In Touch</a
+              <a
+                href="documents/faith-lubelihle-ndlovu-cv.pdf"
+                class="btn btn-branding-outline"
+                download
+                ><i class="fas fa-download me-2"></i>Download CV</a
               >
             </div>
 
-            <div class="hero-social">
-              <a
-                href="https://github.com/faithndlovu"
-                target="_blank"
-                rel="noopener"
-                aria-label="GitHub"
-                ><i class="fab fa-github"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b"
-                target="_blank"
-                rel="noopener"
-                aria-label="LinkedIn"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-              <a href="mailto:nfaithlubelihle@gmail.com" aria-label="Email"
-                ><i class="fas fa-envelope"></i
-              ></a>
-            </div>
+            <p class="hero-meta">
+              <span><i class="fas fa-location-dot"></i> Harare, Zimbabwe</span>
+              <span class="hero-meta-sep" aria-hidden="true">·</span>
+              <span class="hero-available"><span class="status-dot"></span> Available for opportunities</span>
+              <span class="hero-meta-sep" aria-hidden="true">·</span>
+              <a href="https://github.com/faithndlovu" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </p>
           </div>
 
           <div class="hero-visual">
-            <div class="orb">
-              <img
-                src="images/faith.jpeg"
-                alt="Portrait of Faith Lubelihle Ndlovu"
-              />
+            <div class="portrait-card">
+              <img src="images/faith.jpeg" alt="Portrait of Faith Ndlovu" />
             </div>
-            <span class="orbit-chip oc-1" title="React"
-              ><i class="fab fa-react"></i
-            ></span>
-            <span class="orbit-chip oc-2" title="Laravel"
-              ><i class="fab fa-laravel"></i
-            ></span>
-            <span class="orbit-chip oc-3" title="Flutter (mobile)"
-              ><i class="fas fa-mobile-screen"></i
-            ></span>
-            <span class="orbit-chip oc-4" title="JavaScript"
-              ><i class="fab fa-js"></i
-            ></span>
+            <div class="portrait-badge pb-1">
+              <span class="pb-icon"><i class="fas fa-rocket"></i></span>
+              <span><strong>5 live apps</strong><small>Web &amp; mobile</small></span>
+            </div>
+            <div class="portrait-badge pb-2">
+              <span class="pb-icon"><i class="fas fa-code-branch"></i></span>
+              <span><strong>Idea → delivery</strong><small>Build · test · ship</small></span>
+            </div>
           </div>
         </div>
 
@@ -162,43 +155,36 @@
         <div class="container">
           <div class="section-heading reveal">
             <p class="eyebrow">About Me</p>
-            <h2>Turning ideas into <span class="gradient-text">working software</span></h2>
+            <h2>From idea to <span class="gradient-text">working product</span></h2>
           </div>
 
           <div class="row g-5 align-items-center">
             <div class="col-lg-6 reveal">
               <div class="about-text">
                 <p class="lead-text">
-                  I'm a Software Developer with a National Diploma in
-                  Information Technology from Bulawayo Polytechnic. I work as a
-                  Software Developer Assistant with Triplepower Engineering,
-                  outsourced to different client companies, and I also teach
-                  PHP.
+                  I'm a Software Developer based in Harare, Zimbabwe, with a
+                  National Diploma in Information Technology from Bulawayo
+                  Polytechnic.
                 </p>
                 <p>
-                  Being placed with different companies means I adapt quickly to
-                  new teams, codebases and business problems. My day-to-day
-                  involves building web and mobile information systems end to
-                  end — analysing what users need, designing the
-                  database, developing features in PHP, Laravel, React and
-                  Flutter, integrating REST APIs, then testing, debugging and
-                  preparing them for deployment.
+                  I enjoy building web and mobile applications that solve
+                  practical problems. My experience spans full-stack development,
+                  mobile application development, database design, API
+                  integration and software testing.
                 </p>
                 <p>
-                  I'm most interested in <strong>web and mobile
-                  development</strong>: products people actually use every day,
-                  like the point-of-sale system I designed and deployed from
-                  scratch. Before development, I spent a year in IT support at
-                  NUST, which taught me to think about the person on the other
-                  side of the screen.
+                  Through my professional experience, I've developed the ability
+                  to work with different teams, understand user requirements and
+                  take features from development through to delivery.
                 </p>
-                <a
-                  href="documents/faith-lubelihle-ndlovu-cv.pdf"
-                  class="btn btn-branding mt-2"
-                  target="_blank"
-                  download
-                  ><i class="fas fa-download me-2"></i>Download CV</a
-                >
+                <p>
+                  I'm continuously learning, exploring new technologies and
+                  building projects that challenge me to become a better
+                  developer.
+                </p>
+                <a href="#contact" class="btn btn-branding mt-2"
+                  >Let's talk <i class="fas fa-arrow-right ms-2"></i
+                ></a>
               </div>
             </div>
 
@@ -206,30 +192,30 @@
               <div class="row g-3" data-stagger>
                 <div class="col-sm-6">
                   <div class="highlight-card spotlight">
+                    <span class="hl-icon"><i class="fas fa-briefcase"></i></span>
+                    <h3>Current role</h3>
+                    <p>Software Developer Assistant at Triplepower Engineering, placed with client companies.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="highlight-card spotlight">
                     <span class="hl-icon"><i class="fas fa-graduation-cap"></i></span>
                     <h3>Education</h3>
-                    <p>National Diploma in Information Technology — Bulawayo Polytechnic, 2025.</p>
+                    <p>National Diploma in Information Technology, Bulawayo Polytechnic (2025).</p>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="highlight-card spotlight">
-                    <span class="hl-icon"><i class="fas fa-briefcase"></i></span>
-                    <h3>Experience</h3>
-                    <p>Software Developer Assistant, building web &amp; mobile systems for clients.</p>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="highlight-card spotlight">
-                    <span class="hl-icon"><i class="fas fa-mobile-screen-button"></i></span>
-                    <h3>Interests</h3>
-                    <p>Full-stack web apps, mobile apps with Flutter, and clean, responsive UI.</p>
+                    <span class="hl-icon"><i class="fas fa-chalkboard-user"></i></span>
+                    <h3>Teaching</h3>
+                    <p>I teach PHP lessons, which keeps my fundamentals sharp and my explanations clear.</p>
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="highlight-card spotlight">
                     <span class="hl-icon"><i class="fas fa-lightbulb"></i></span>
-                    <h3>Approach</h3>
-                    <p>Understand the problem first, build in small steps, test thoroughly, then ship.</p>
+                    <h3>How I work</h3>
+                    <p>Understand the business problem, build in small steps, test thoroughly, then deliver.</p>
                   </div>
                 </div>
               </div>
@@ -238,20 +224,20 @@
 
           <div class="stats-grid mt-5" data-stagger>
             <div class="stat-card spotlight">
-              <div class="stat-number"><span data-count="12">12</span>+</div>
-              <div class="stat-label">Projects Built</div>
+              <div class="stat-number"><span data-count="5">5</span></div>
+              <div class="stat-label">Live apps deployed</div>
             </div>
             <div class="stat-card spotlight">
-              <div class="stat-number"><span data-count="12">12</span>+</div>
-              <div class="stat-label">Technologies</div>
-            </div>
-            <div class="stat-card spotlight">
-              <div class="stat-number"><span data-count="4">4</span></div>
-              <div class="stat-label">Certifications</div>
+              <div class="stat-number"><span data-count="5">5</span></div>
+              <div class="stat-label">Technical case studies</div>
             </div>
             <div class="stat-card spotlight">
               <div class="stat-number"><span data-count="3">3</span></div>
-              <div class="stat-label">Professional Roles</div>
+              <div class="stat-label">Platforms: web, mobile &amp; API</div>
+            </div>
+            <div class="stat-card spotlight">
+              <div class="stat-number"><span data-count="500">500</span>+</div>
+              <div class="stat-label">Devices supported at NUST</div>
             </div>
           </div>
         </div>
@@ -262,19 +248,24 @@
         <div class="starfield" aria-hidden="true"></div>
         <div class="container">
           <div class="section-heading reveal">
-            <p class="eyebrow">Portfolio</p>
+            <p class="eyebrow">Projects</p>
             <h2>Featured <span class="gradient-text">Projects</span></h2>
             <p>
-              Live web and mobile apps I have designed, built and deployed, each with its source code on GitHub.
+              Products I have designed, built, tested and deployed. Try the live
+              demos, read the code, or see how I approached each one.
             </p>
           </div>
 
-          <div class="row g-4" id="featured-grid" data-stagger></div>
+          <div class="row g-4" id="featured-grid" data-stagger>
+<!-- FEATURED:START -->
+<div class="col-lg-4 col-md-6 project-col" data-category="web backend fullstack"><div class="work-card spotlight featured-card"><div class="work-image"><span class="image-badge"><span class="status-dot"></span> Live</span><img src="images/faithflow.png" alt="FaithFlow Point of Sale sign-in screen" loading="lazy" /></div><div class="work-card-body"><div class="card-meta"><span class="card-kicker">Full Stack · Web App</span><span class="card-type">Personal project</span></div><h3>FaithFlow POS</h3><p>A point-of-sale and inventory system for running a store: sales, stock, purchase orders, expenses and reporting, with separate access for admins, managers, cashiers and stock controllers.</p><div class="work-tags"><span>React</span><span>Node.js</span><span>Express</span><span>SQLite</span><span>Tailwind CSS</span><span>JWT</span></div><div class="card-actions"><a href="https://faithflow-pos.vercel.app/" class="btn btn-branding btn-sm-pill" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a><a href="case-studies.html#faithflow" class="btn btn-branding-outline btn-sm-pill"><i class="fas fa-book-open"></i> Case Study</a></div></div></div></div><div class="col-lg-4 col-md-6 project-col" data-category="mobile backend fullstack"><div class="work-card spotlight featured-card"><div class="work-image phone-stage"><span class="image-badge"><span class="status-dot"></span> Live</span><div class="phone-device"><span class="phone-notch"></span><img src="images/fayora-phone.jpg" alt="FAYORA Finance Tracker sign-in screen on a phone" loading="lazy" /></div></div><div class="work-card-body"><div class="card-meta"><span class="card-kicker">Mobile · Full Stack</span><span class="card-type">Personal project</span></div><h3>FAYORA Finance Tracker</h3><p>A mobile app for managing income, expenses, monthly budgets and savings goals, with separate totals for each currency, including ZiG and pula.</p><div class="work-tags"><span>React Native</span><span>Expo</span><span>TypeScript</span><span>Node.js</span><span>Express</span><span>SQLite</span></div><div class="card-actions"><a href="https://personal-finance-tracker-mobile.vercel.app" class="btn btn-branding btn-sm-pill" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a><a href="https://github.com/faithndlovu/personal-finance-tracker" class="btn btn-branding-outline btn-sm-pill" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a><a href="case-studies.html#fayora" class="btn btn-branding-outline btn-sm-pill"><i class="fas fa-book-open"></i> Case Study</a></div></div></div></div><div class="col-lg-4 col-md-6 project-col" data-category="web fullstack"><div class="work-card spotlight featured-card"><div class="work-image"><span class="image-badge"><span class="status-dot"></span> Live</span><img src="images/savanna-grill.jpg" alt="Savanna Grill restaurant website home page" loading="lazy" /></div><div class="work-card-body"><div class="card-meta"><span class="card-kicker">Full Stack · Website</span><span class="card-type">Personal project</span></div><h3>Savanna Grill</h3><p>A restaurant website for a fictional grill house, with menu, gallery, table reservations, sign-in and an admin area for managing bookings and the menu.</p><div class="work-tags"><span>React 19</span><span>TanStack Start</span><span>Supabase</span><span>Tailwind CSS</span></div><div class="card-actions"><a href="https://restaurant-seven-pi-10.vercel.app" class="btn btn-branding btn-sm-pill" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a><a href="https://github.com/faithndlovu/restaurant" class="btn btn-branding-outline btn-sm-pill" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></div></div></div></div>
+<!-- FEATURED:END -->
+          </div>
 
 
           <div class="text-center mt-5 reveal">
             <a href="work.html" class="btn btn-branding-outline">
-              See All Projects <i class="fas fa-arrow-right ms-2"></i>
+              Explore All Projects <i class="fas fa-arrow-right ms-2"></i>
             </a>
           </div>
         </div>
@@ -284,63 +275,40 @@
       <section class="home-section" id="skills">
         <div class="container">
           <div class="section-heading reveal">
-            <p class="eyebrow">Expertise</p>
-            <h2>Skills &amp; <span class="gradient-text">Technologies</span></h2>
-            <p>The tools I use to design, build, test and support software.</p>
+            <p class="eyebrow">Skills</p>
+            <h2>What I <span class="gradient-text">work with</span></h2>
+            <p>Grouped by what I use them for, and all used in the projects on this site.</p>
           </div>
 
-          <div class="row g-4" data-stagger>
-            <div class="col-lg-3 col-md-6">
-              <div class="skill-card spotlight">
-                <h3>
-                  <span class="skill-icon"><i class="fas fa-code"></i></span>
-                  Development
-                </h3>
-                <div class="skill-chips">
-                  <span>PHP</span><span>Laravel</span><span>JavaScript</span
-                  ><span>React.js</span><span>Flutter</span><span>Dart</span
-                  ><span>HTML</span><span>CSS</span><span>REST APIs</span
-                  ><span>VB.NET</span><span>C++</span>
-                </div>
+          <div class="skills-grid" data-stagger>
+            <div class="skill-card spotlight">
+              <h3><span class="skill-icon"><i class="fas fa-display"></i></span> Frontend Development</h3>
+              <div class="skill-chips">
+                <span>JavaScript</span><span>React</span><span>HTML5</span><span>CSS3</span><span>Tailwind CSS</span>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="skill-card spotlight">
-                <h3>
-                  <span class="skill-icon"><i class="fas fa-gears"></i></span>
-                  Engineering
-                </h3>
-                <div class="skill-chips">
-                  <span>System Testing</span><span>Debugging</span
-                  ><span>Git &amp; GitHub</span><span>API Integration</span
-                  ><span>Responsive UI</span>
-                </div>
+            <div class="skill-card spotlight">
+              <h3><span class="skill-icon"><i class="fas fa-server"></i></span> Backend Development</h3>
+              <div class="skill-chips">
+                <span>PHP</span><span>Laravel</span><span>Node.js</span><span>Express</span><span>REST APIs</span>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="skill-card spotlight">
-                <h3>
-                  <span class="skill-icon"><i class="fas fa-database"></i></span>
-                  Data &amp; Tools
-                </h3>
-                <div class="skill-chips">
-                  <span>MySQL</span><span>Database Design</span
-                  ><span>phpMyAdmin</span><span>MySQL Workbench</span
-                  ><span>XAMPP</span><span>Postman</span>
-                </div>
+            <div class="skill-card spotlight">
+              <h3><span class="skill-icon"><i class="fas fa-mobile-screen-button"></i></span> Mobile Development</h3>
+              <div class="skill-chips">
+                <span>Flutter</span><span>Dart</span><span>React Native</span><span>Expo</span>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="skill-card spotlight">
-                <h3>
-                  <span class="skill-icon"><i class="fas fa-network-wired"></i></span>
-                  IT &amp; Infra
-                </h3>
-                <div class="skill-chips">
-                  <span>Windows Admin</span><span>Active Directory</span
-                  ><span>Network Support</span><span>Cisco APs</span
-                  ><span>Remote Support</span>
-                </div>
+            <div class="skill-card spotlight">
+              <h3><span class="skill-icon"><i class="fas fa-database"></i></span> Databases &amp; Tools</h3>
+              <div class="skill-chips">
+                <span>MySQL</span><span>SQLite</span><span>PostgreSQL</span><span>Git</span><span>GitHub</span><span>Postman</span>
+              </div>
+            </div>
+            <div class="skill-card spotlight">
+              <h3><span class="skill-icon"><i class="fas fa-gears"></i></span> Software Engineering</h3>
+              <div class="skill-chips">
+                <span>Testing</span><span>Debugging</span><span>Database Design</span><span>API Integration</span>
               </div>
             </div>
           </div>
@@ -351,8 +319,8 @@
       <section class="home-section" id="experience">
         <div class="container">
           <div class="section-heading reveal">
-            <p class="eyebrow">Career</p>
-            <h2>Professional <span class="gradient-text">Experience</span></h2>
+            <p class="eyebrow">Experience</p>
+            <h2>Where I've <span class="gradient-text">delivered</span></h2>
           </div>
 
           <div class="xp-timeline">
@@ -368,15 +336,14 @@
                   <span class="org-note">· Outsourced to client companies</span>
                 </p>
                 <ul class="timeline-points">
-                  <li>Placed by Triplepower with different client companies, joining their teams to deliver software for their business needs.</li>
-                  <li>Develop web and mobile information systems from requirements gathering through development, testing and handover.</li>
-                  <li>Build features with PHP, Laravel, JavaScript, React, Flutter and MySQL, and design the database structures and workflows behind them.</li>
-                  <li>Develop and integrate REST APIs connecting applications to backend systems.</li>
-                  <li>Test, debug and deploy applications for client testing and production, and implement client-requested enhancements.</li>
-                  <li>Manage code with Git &amp; GitHub and produce technical documentation and progress reports.</li>
+                  <li><strong>Own systems end to end:</strong> lead and contribute to web and mobile information systems for client companies, from gathering requirements through development, testing and handover.</li>
+                  <li><strong>Built a system independently:</strong> designed and built a full-stack financial reconciliation system (PHP, MySQL) from concept to user acceptance testing, including the database schema, business logic and reporting modules.</li>
+                  <li><strong>Mobile delivery:</strong> developed and maintained Flutter apps, covering UI, state management, builds, testing and debugging.</li>
+                  <li><strong>Testing &amp; releases:</strong> test, debug and prepare applications for client testing and production, and ship client-requested changes without breaking existing features.</li>
+                  <li><strong>Team &amp; process:</strong> analyse requirements with stakeholders, integrate REST APIs, manage code with Git &amp; GitHub, and write technical documentation and progress reports.</li>
                 </ul>
                 <div class="work-tags mb-0">
-                  <span>Laravel</span><span>React</span><span>Flutter</span
+                  <span>PHP</span><span>Laravel</span><span>React</span><span>Flutter</span
                   ><span>MySQL</span><span>REST APIs</span>
                 </div>
               </div>
@@ -391,7 +358,7 @@
                 <h3>PHP Tutor</h3>
                 <p class="timeline-org">Programming lessons</p>
                 <ul class="timeline-points">
-                  <li>Teach PHP programming lessons, explaining core concepts clearly and guiding learners through hands-on coding.</li>
+                  <li>Teach PHP programming, explaining core concepts clearly and guiding learners through hands-on coding.</li>
                   <li>Help learners build confidence writing, reading and debugging PHP code.</li>
                 </ul>
                 <div class="work-tags mb-0">
@@ -409,10 +376,10 @@
                   National University of Science and Technology (NUST)
                 </p>
                 <ul class="timeline-points">
-                  <li>Supported roughly 500+ desktop computers and 100 laptops across the university.</li>
-                  <li>Diagnosed and resolved hardware, software, printer and network issues for daily support requests.</li>
+                  <li>Supported 500+ desktop computers and 100 laptops across the university, handling daily support requests in a busy environment.</li>
+                  <li>Diagnosed and resolved hardware, software, printer and network issues.</li>
                   <li>Installed and configured Windows, software applications and network printers.</li>
-                  <li>Assisted with network infrastructure: switches, PoE equipment, fibre, and Cisco access points.</li>
+                  <li>Worked on network infrastructure: switches, PoE equipment, fibre and Cisco access points.</li>
                 </ul>
                 <div class="work-tags mb-0">
                   <span>IT Support</span><span>Networking</span
@@ -451,11 +418,9 @@
                 <h3><i class="fas fa-certificate"></i> Certifications</h3>
                 <div class="edu-item">
                   <strong>Cisco — Introduction to Cybersecurity</strong>
-                  <span>Cisco Networking Academy</span>
                 </div>
                 <div class="edu-item">
                   <strong>SheCodes — Junior Front-End Developer</strong>
-                  <span>HTML, CSS, JavaScript, React, APIs</span>
                 </div>
                 <a
                   href="documents/Faith%20L%20Ndlovu%20Cetificates.pdf"
@@ -473,74 +438,51 @@
       <!-- 07 · CONTACT -->
       <section class="home-section" id="contact">
         <div class="container">
-          <div class="section-heading reveal">
+          <div class="cta-panel reveal">
             <p class="eyebrow">Contact</p>
-            <h2>Let's <span class="gradient-text">work together</span></h2>
+            <h2>Looking for a developer who <span class="gradient-text">delivers?</span></h2>
             <p>
-              Have a project, a role or an idea? Reach out through any channel
-              below or send me a message directly.
+              I'm open to Junior Software Developer, Frontend, Full-Stack and
+              Mobile App Developer roles, as well as freelance projects. The
+              quickest way to reach me is email.
             </p>
+            <div class="cta-buttons">
+              <a href="mailto:nfaithlubelihle@gmail.com" class="btn btn-branding btn-lg-cta"
+                ><i class="fas fa-envelope me-2"></i>nfaithlubelihle@gmail.com</a
+              >
+              <a href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b" target="_blank" rel="noopener" class="btn btn-branding-outline btn-lg-cta"
+                ><i class="fab fa-linkedin me-2"></i>LinkedIn</a
+              >
+              <a href="https://github.com/faithndlovu" target="_blank" rel="noopener" class="btn btn-branding-outline btn-lg-cta"
+                ><i class="fab fa-github me-2"></i>GitHub</a
+              >
+            </div>
           </div>
 
-          <div class="row g-4 align-items-stretch">
-            <div class="col-lg-5">
-              <div class="contact-list" data-stagger>
-                <a class="contact-row spotlight" href="mailto:nfaithlubelihle@gmail.com">
-                  <span class="hl-icon"><i class="fas fa-envelope"></i></span>
-                  <span><small>Email</small>nfaithlubelihle@gmail.com</span>
-                </a>
-                <a
-                  class="contact-row spotlight"
-                  href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <span class="hl-icon"><i class="fab fa-linkedin-in"></i></span>
-                  <span><small>LinkedIn</small>Faith Lubelihle Ndlovu</span>
-                </a>
-                <a
-                  class="contact-row spotlight"
-                  href="https://github.com/faithndlovu"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <span class="hl-icon"><i class="fab fa-github"></i></span>
-                  <span><small>GitHub</small>github.com/faithndlovu</span>
-                </a>
-                <div class="contact-row">
-                  <span class="hl-icon"><i class="fas fa-location-dot"></i></span>
-                  <span><small>Location</small>Harare, Zimbabwe</span>
+          <div class="contact-form-wrapper reveal">
+            <h2>Or send a message</h2>
+            <p class="form-subtitle">I'll get back to you as soon as I can.</p>
+            <form
+              id="contact-form"
+              action="https://formspree.io/f/mzdqrybz"
+              method="POST"
+            >
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <input type="text" name="name" class="form-control-custom" placeholder="Your Name" aria-label="Your name" required />
+                </div>
+                <div class="col-sm-6">
+                  <input type="email" name="email" class="form-control-custom" placeholder="Your Email" aria-label="Your email" required />
                 </div>
               </div>
-            </div>
-
-            <div class="col-lg-7 reveal">
-              <div class="contact-form-wrapper m-0">
-                <h2>Send a Message</h2>
-                <p class="form-subtitle">I'll get back to you as soon as I can.</p>
-                <form
-                  id="contact-form"
-                  action="https://formspree.io/f/mzdqrybz"
-                  method="POST"
-                >
-                  <div class="row g-3">
-                    <div class="col-sm-6">
-                      <input type="text" name="name" class="form-control-custom" placeholder="Your Name" aria-label="Your name" required />
-                    </div>
-                    <div class="col-sm-6">
-                      <input type="email" name="email" class="form-control-custom" placeholder="Your Email" aria-label="Your email" required />
-                    </div>
-                  </div>
-                  <input type="text" name="subject" class="form-control-custom" placeholder="Subject" aria-label="Subject" />
-                  <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
-                  <textarea name="message" class="form-control-custom" placeholder="Your Message" aria-label="Your message" required></textarea>
-                  <button type="submit" class="btn btn-branding w-100">
-                    Send Message
-                  </button>
-                  <p id="form-status" class="form-status" role="status"></p>
-                </form>
-              </div>
-            </div>
+              <input type="text" name="subject" class="form-control-custom" placeholder="Subject" aria-label="Subject" />
+              <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <textarea name="message" class="form-control-custom" placeholder="Your Message" aria-label="Your message" required></textarea>
+              <button type="submit" class="btn btn-branding w-100">
+                Send Message
+              </button>
+              <p id="form-status" class="form-status" role="status"></p>
+            </form>
           </div>
         </div>
       </section>

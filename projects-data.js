@@ -1,16 +1,23 @@
 /* =========================================================
    PROJECTS — single source of truth
    ---------------------------------------------------------
-   The Work page and the Home page's "Featured Projects" are
-   both built from this list. To add a project, copy one of
-   the blocks below, paste it where you want it to appear,
-   and change the details.
+   The Projects page and the Home page's "Featured Projects" are
+   both built from this list, in this order. To add a project,
+   copy one of the blocks below, paste it where you want it to
+   appear, change the details, then run:
+
+       node tools/build-projects.js
+
+   (That writes the cards into the HTML so they show up even
+   without JavaScript. The browser refreshes them from this file
+   anyway, so the site is never out of date.)
 
    Fields:
      title        Project name
+     type         "Personal project" | "Company project" | "Client project"
      kicker       Small label above the title, e.g. "Full Stack · Web App"
      categories   Any of: "web", "mobile", "backend", "fullstack"
-                  (these drive the filter buttons on the Work page)
+                  (these drive the filter buttons on the Projects page)
      description  One or two sentences
      tags         Technologies used
      image        Screenshot in /images (optional)
@@ -22,19 +29,23 @@
      live         Live demo URL (optional) — shows a "Live" badge
      code         GitHub URL (optional)
      caseStudy    Link to a case study (optional)
-     note         Small pill shown when there are no links,
-                  e.g. "In Progress" or "Company Project"
+     note         Small pill shown when there are no public links,
+                  e.g. "In Progress" or "Confidential"
      featured     true = also show on the Home page (keep it to 3)
+
+   Company work: no source code, screenshots, client names or
+   internal details — describe what it does, not how it is built.
    ========================================================= */
 
 window.PROJECTS = [
   {
     title: "FaithFlow POS",
+    type: "Personal project",
     kicker: "Full Stack · Web App",
     categories: ["web", "backend", "fullstack"],
     description:
-      "Point-of-sale and inventory system with four user roles, barcode scanning, purchase orders, loyalty tracking and dashboards.",
-    tags: ["React", "Node.js", "Express", "SQLite", "JWT"],
+      "A point-of-sale and inventory system for running a store: sales, stock, purchase orders, expenses and reporting, with separate access for admins, managers, cashiers and stock controllers.",
+    tags: ["React", "Node.js", "Express", "SQLite", "Tailwind CSS", "JWT"],
     image: "images/faithflow.png",
     imageAlt: "FaithFlow Point of Sale sign-in screen",
     live: "https://faithflow-pos.vercel.app/",
@@ -43,36 +54,67 @@ window.PROJECTS = [
   },
   {
     title: "FAYORA Finance Tracker",
+    type: "Personal project",
     kicker: "Mobile · Full Stack",
     categories: ["mobile", "backend", "fullstack"],
     description:
-      "A React Native mobile app and REST API for tracking income and expenses, monthly budgets with warnings, savings goals and multiple currencies, including ZiG and pula.",
-    tags: ["React Native", "Expo", "TypeScript", "Node.js", "Express", "SQLite", "JWT"],
+      "A mobile app for managing income, expenses, monthly budgets and savings goals, with separate totals for each currency, including ZiG and pula.",
+    tags: ["React Native", "Expo", "TypeScript", "Node.js", "Express", "SQLite"],
     phone: "images/fayora-phone.jpg",
     imageAlt: "FAYORA Finance Tracker sign-in screen on a phone",
     live: "https://personal-finance-tracker-mobile.vercel.app",
     code: "https://github.com/faithndlovu/personal-finance-tracker",
+    caseStudy: "case-studies.html#fayora",
+    featured: true,
+  },
+  {
+    title: "Savanna Grill",
+    type: "Personal project",
+    kicker: "Full Stack · Website",
+    categories: ["web", "fullstack"],
+    description:
+      "A restaurant website for a fictional grill house, with menu, gallery, table reservations, sign-in and an admin area for managing bookings and the menu.",
+    tags: ["React 19", "TanStack Start", "Supabase", "Tailwind CSS"],
+    image: "images/savanna-grill.jpg",
+    imageAlt: "Savanna Grill restaurant website home page",
+    live: "https://restaurant-seven-pi-10.vercel.app",
+    code: "https://github.com/faithndlovu/restaurant",
     featured: true,
   },
   {
     title: "TaskFlow",
-    kicker: "Full Stack · Web App",
+    type: "Personal project",
+    kicker: "Full Stack · Backend & API",
     categories: ["web", "backend", "fullstack"],
     description:
-      "Task management with admin, manager and member roles, an enforced To do → In review → Done workflow, a drag-and-drop Kanban board, audit trail and API tests.",
-    tags: ["Node.js", "Express 5", "SQLite", "JWT", "JavaScript", "Supertest"],
+      "Task management with admin, manager and member roles, an enforced review workflow, a drag-and-drop Kanban board, an audit trail and automated API tests.",
+    tags: ["Node.js", "Express 5", "SQLite", "REST API", "JWT", "Supertest"],
     image: "images/taskflow.jpg",
     imageAlt: "TaskFlow sign-in screen",
     live: "https://taskflow-production-production.up.railway.app",
     code: "https://github.com/faithndlovu/task-management-app",
-    featured: true,
+    caseStudy: "case-studies.html#taskflow",
+  },
+  {
+    title: "Student Attachment Tracking System",
+    type: "Personal project",
+    kicker: "Full Stack · Laravel",
+    categories: ["web", "backend", "fullstack"],
+    description:
+      "Connects students, companies, supervisors and assessors through applications, placements, location-based check-ins, reports, grading and real-time chat.",
+    tags: ["Laravel", "PHP", "MySQL", "Livewire", "Tailwind CSS"],
+    image: "images/sats.png",
+    imageAlt: "Student Attachment Tracking System landing page",
+    code: "https://github.com/faithndlovu/student-attachment-tracking-system",
+    caseStudy: "case-studies.html#sats",
   },
   {
     title: "LearnHub",
+    type: "Personal project",
     kicker: "Full Stack · Web App",
     categories: ["web", "backend", "fullstack"],
     description:
-      "A student learning platform with registration, a course catalogue, ordered lessons, server-graded quizzes and progress tracking, plus instructor and admin dashboards.",
+      "A learning platform with student registration, a course catalogue, ordered lessons, server-graded quizzes and progress tracking, plus instructor and admin dashboards.",
     tags: ["Node.js", "Express 5", "SQLite", "JWT", "JavaScript"],
     image: "images/learnhub.jpg",
     imageAlt: "LearnHub sign-in and student registration screen",
@@ -80,23 +122,12 @@ window.PROJECTS = [
     code: "https://github.com/faithndlovu/student-learning-app",
   },
   {
-    title: "Savanna Grill",
-    kicker: "Full Stack · Website",
-    categories: ["web", "fullstack"],
-    description:
-      "A restaurant website for a fictional grill house, with menu, gallery, sign-in, table reservations and an admin area, server-rendered with a Supabase backend.",
-    tags: ["React 19", "TanStack Start", "Vite", "Supabase", "Tailwind"],
-    image: "images/savanna-grill.jpg",
-    imageAlt: "Savanna Grill restaurant website home page",
-    live: "https://restaurant-seven-pi-10.vercel.app",
-    code: "https://github.com/faithndlovu/restaurant",
-  },
-  {
     title: "E-Learning Platform",
-    kicker: "Full Stack · Web Platform",
+    type: "Personal project",
+    kicker: "Backend & API · Architecture",
     categories: ["web", "backend", "fullstack"],
     description:
-      "A REST API plus separate student/instructor and admin apps, with courses, sessions, enrolments, instructor payouts and JWT role-based access.",
+      "A layered REST API with separate student/instructor and admin apps, covering courses, sessions, enrolments and instructor payouts.",
     tags: ["Node.js", "Express", "PostgreSQL", "React", "TypeScript"],
     cover: {
       icon: "fas fa-graduation-cap",
@@ -108,44 +139,35 @@ window.PROJECTS = [
   },
   {
     title: "Retail Shop Management App",
-    kicker: "Mobile · Company Project",
-    categories: ["mobile", "backend", "fullstack"],
+    type: "Company project",
+    kicker: "Mobile · Flutter",
+    categories: ["mobile", "backend"],
     description:
-      "A Flutter mobile app backed by a PHP REST API that lets a retail business manage stock, record sales and track daily performance.",
-    tags: ["Flutter", "Dart", "PHP 8", "MySQL", "REST API"],
+      "A Flutter mobile app, backed by a REST API, that lets a retail business manage stock, record sales and see daily performance.",
+    tags: ["Flutter", "Dart", "PHP", "MySQL", "REST API"],
     cover: {
       icon: "fas fa-mobile-screen-button",
       theme: "teal",
-      label: "Flutter · PHP · MySQL · REST",
+      label: "Flutter · REST API",
     },
-    caseStudy: "case-studies.html#retail-app",
-    note: "Company Project",
-  },
-  {
-    title: "Student Attachment Tracking System",
-    kicker: "Full Stack · Laravel",
-    categories: ["web", "backend", "fullstack"],
-    description:
-      "Manages student placements, supervisor evaluations and reporting, with authentication and role-based access.",
-    tags: ["Laravel", "PHP", "MySQL", "Blade"],
-    image: "images/sats.png",
-    imageAlt: "Student Attachment Tracking System screenshot",
-    code: "https://github.com/faithndlovu/student-attachment-tracking-system",
+    note: "Confidential",
   },
   {
     title: "AI Poem Generator",
-    kicker: "Web · AI API",
+    type: "Personal project",
+    kicker: "Frontend · AI API",
     categories: ["web"],
     description:
       "Generates creative poems from a user's prompt by calling an AI API, with a clean, responsive interface.",
     tags: ["JavaScript", "AI API", "CSS"],
-    image: "images/poemgenerator.png",
+    image: "images/poemgenerator.jpg",
     imageAlt: "AI Poem Generator screenshot",
     code: "https://github.com/faithndlovu/Poem-generator",
   },
   {
     title: "Dictionary App",
-    kicker: "Web · React",
+    type: "Personal project",
+    kicker: "Frontend · React",
     categories: ["web"],
     description:
       "A React app that fetches real-time meanings, phonetics and examples from a dictionary API as you search.",
@@ -156,21 +178,23 @@ window.PROJECTS = [
   },
   {
     title: "Victoria Falls Travel",
-    kicker: "Web · Responsive",
+    type: "Personal project",
+    kicker: "Frontend · Responsive",
     categories: ["web"],
     description:
       "A responsive travel site showcasing Victoria Falls with strong imagery and a mobile-friendly layout.",
     tags: ["HTML", "CSS", "Responsive"],
-    image: "images/travel.png",
+    image: "images/travel.jpg",
     imageAlt: "Victoria Falls Travel Project screenshot",
     code: "https://github.com/faithndlovu/vic-falls-travel-project",
   },
   {
     title: "Hope Hub",
-    kicker: "Web · Client Project",
+    type: "Client project",
+    kicker: "Frontend · Website",
     categories: ["web"],
     description:
-      "A multi-page site for a youth empowerment initiative — programme info, products, impact stats, enrolment and donations.",
+      "A multi-page site for a youth empowerment initiative, with programme information, products, impact stats, enrolment and donations.",
     tags: ["HTML", "CSS", "JavaScript", "Responsive"],
     cover: {
       icon: "fas fa-hand-holding-heart",

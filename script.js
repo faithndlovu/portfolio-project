@@ -1,10 +1,13 @@
-// ===== THEME (DARK-FIRST) =====
+// ===== THEME (LIGHT-FIRST, "clean professional") =====
 (function () {
   const root = document.documentElement;
-  const saved = localStorage.getItem("theme");
+  let saved = null;
+  try {
+    saved = localStorage.getItem("theme");
+  } catch (e) {}
 
-  // Dark-first: default to dark unless the visitor previously chose light
-  const initial = saved || "dark";
+  // Light by default; a visitor who switched to dark keeps their choice
+  const initial = saved === "dark" ? "dark" : "light";
   root.setAttribute("data-theme", initial);
 
   function syncIcon(theme) {
@@ -16,100 +19,16 @@
   document.addEventListener("DOMContentLoaded", function () {
     // ===== RENDER PROJECT CARDS from projects-data.js =====
     // Runs first so the stagger/spotlight/filter code below sees the cards.
+    // The cards are already written into the HTML by tools/build-projects.js;
+    // re-render from projects-data.js so the page is always current.
     (function renderProjects() {
       const projects = window.PROJECTS || [];
+      const cards = window.ProjectCards;
+      if (!projects.length || !cards) return;
       const workGrid = document.getElementById("project-grid");
       const featuredGrid = document.getElementById("featured-grid");
-      if (!projects.length || (!workGrid && !featuredGrid)) return;
-
-      function esc(s) {
-        return String(s == null ? "" : s)
-          .replace(/&/g, "&amp;")
-          .replace(/</g, "&lt;")
-          .replace(/>/g, "&gt;")
-          .replace(/"/g, "&quot;");
-      }
-
-      function media(p) {
-        const badge = p.live
-          ? '<span class="image-badge"><span class="status-dot"></span> Live</span>'
-          : "";
-        if (p.phone) {
-          return (
-            '<div class="work-image phone-stage">' + badge +
-            '<div class="phone-device"><span class="phone-notch"></span>' +
-            '<img src="' + esc(p.phone) + '" alt="' + esc(p.imageAlt || p.title) + '" loading="lazy" /></div></div>'
-          );
-        }
-        if (p.image) {
-          return (
-            '<div class="work-image">' + badge +
-            '<img src="' + esc(p.image) + '" alt="' + esc(p.imageAlt || p.title) + '" loading="lazy" /></div>'
-          );
-        }
-        const c = p.cover || {};
-        return (
-          '<div class="work-image cover cover-' + esc(c.theme || "blue") + '">' + badge +
-          '<i class="' + esc(c.icon || "fas fa-code") + '"></i>' +
-          (c.label ? '<span class="cover-stack">' + esc(c.label) + "</span>" : "") +
-          "</div>"
-        );
-      }
-
-      function actions(p) {
-        const out = [];
-        let first = true;
-        function btn(href, label, external) {
-          const cls = first ? "btn btn-branding btn-sm-pill" : "btn btn-branding-outline btn-sm-pill";
-          first = false;
-          out.push(
-            '<a href="' + esc(href) + '" class="' + cls + '"' +
-              (external ? ' target="_blank" rel="noopener"' : "") + ">" + label + "</a>"
-          );
-        }
-        if (p.live) btn(p.live, '<i class="fas fa-play"></i> Live Demo', true);
-        if (p.code) btn(p.code, '<i class="fab fa-github"></i> Code', true);
-        if (p.caseStudy) btn(p.caseStudy, "Case Study", false);
-        if (p.note) out.push('<span class="card-note"><i class="fas fa-lock"></i> ' + esc(p.note) + "</span>");
-        return '<div class="card-actions">' + out.join("") + "</div>";
-      }
-
-      function card(p, colClass) {
-        return (
-          '<div class="' + colClass + ' project-col" data-category="' + esc((p.categories || []).join(" ")) + '">' +
-          '<div class="work-card spotlight' + (p.live ? " featured-card" : "") + '">' +
-          media(p) +
-          '<div class="work-card-body">' +
-          (p.kicker ? '<p class="card-kicker">' + esc(p.kicker) + "</p>" : "") +
-          "<h3>" + esc(p.title) + "</h3>" +
-          "<p>" + esc(p.description) + "</p>" +
-          '<div class="work-tags">' +
-          (p.tags || []).map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") +
-          "</div>" +
-          actions(p) +
-          "</div></div></div>"
-        );
-      }
-
-      if (workGrid) {
-        workGrid.innerHTML =
-          projects.map(function (p) { return card(p, "col-lg-4 col-md-6"); }).join("") +
-          '<div class="col-lg-4 col-md-6 coming-col">' +
-          '<a class="coming-card" href="https://github.com/faithndlovu" target="_blank" rel="noopener">' +
-          '<span class="coming-icon"><i class="fas fa-plus"></i></span>' +
-          "<h3>Explore more on GitHub</h3>" +
-          "<p>Coursework, experiments and works in progress.</p>" +
-          '<span class="project-link"><i class="fab fa-github"></i> github.com/faithndlovu</span>' +
-          "</a></div>";
-      }
-
-      if (featuredGrid) {
-        featuredGrid.innerHTML = projects
-          .filter(function (p) { return p.featured; })
-          .slice(0, 3)
-          .map(function (p) { return card(p, "col-lg-4 col-md-6"); })
-          .join("");
-      }
+      if (workGrid) workGrid.innerHTML = cards.workGrid(projects);
+      if (featuredGrid) featuredGrid.innerHTML = cards.featured(projects);
     })();
 
     syncIcon(root.getAttribute("data-theme"));
@@ -120,7 +39,9 @@
         const next =
           root.getAttribute("data-theme") === "dark" ? "light" : "dark";
         root.setAttribute("data-theme", next);
-        localStorage.setItem("theme", next);
+        try {
+          localStorage.setItem("theme", next);
+        } catch (e) {}
         syncIcon(next);
       });
     }
@@ -479,6 +400,39 @@
             '<a href="https://github.com/' + esc(user) + '" target="_blank" rel="noopener">see them on GitHub</a>.</div>';
         });
     }
+
+    // ===== SCROLL SPY (home page): highlight the nav item for the section in view =====
+    (function scrollSpy() {
+      const links = document.querySelectorAll('.nav-links a[href^="#"][data-nav]');
+      if (!links.length) return;
+      const byKey = {};
+      links.forEach(function (a) {
+        byKey[a.getAttribute("data-nav")] = a.parentElement;
+      });
+      const sections = [
+        ["home", document.getElementById("top")],
+        ["about", document.getElementById("about")],
+        ["projects", document.getElementById("projects")],
+        ["skills", document.getElementById("skills")],
+        ["experience", document.getElementById("experience")],
+        ["contact", document.getElementById("contact")],
+      ].filter(function (s) { return s[1]; });
+      function update() {
+        const y = window.scrollY + window.innerHeight * 0.35;
+        let current = "home";
+        sections.forEach(function (s) {
+          if (s[1].offsetTop <= y) current = s[0];
+        });
+        // "Projects" in the nav opens the full projects page, but still lights up here
+        const projectsLink = document.querySelector('.nav-links a[data-nav="projects"]');
+        Object.keys(byKey).forEach(function (k) {
+          byKey[k].classList.toggle("active", k === current);
+        });
+        if (projectsLink) projectsLink.parentElement.classList.toggle("active", current === "projects");
+      }
+      window.addEventListener("scroll", update, { passive: true });
+      update();
+    })();
 
     // ===== CONTACT FORM (submits to Formspree) =====
     const form = document.getElementById("contact-form");
