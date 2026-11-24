@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Technical case studies by Faith Lubelihle Ndlovu – how FaithFlow POS, an e-learning platform and a retail shop management app were designed and built."
+    />
+    <title>Case Studies | Faith Lubelihle Ndlovu</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%2360a5fa%22/%3E%3Cstop offset=%221%22 stop-color=%22%232dd4bf%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22url(%23g)%22/%3E%3Ctext x=%2250%22 y=%2270%22 font-size=%2260%22 font-family=%22Arial,sans-serif%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3EF%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/portfolio.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <header class="site-header">
+      <div class="container">
+        <nav
+          class="navbar-custom d-flex justify-content-between align-items-center"
+        >
+          <a href="index.html" class="brand">Faith<span>.</span></a>
+
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" title="Homepage">Home</a></li>
+            <li><a href="about.html" title="About Faith">About</a></li>
+            <li><a href="work.html" title="Faith's Work">Work</a></li>
+            <li class="active"><a href="case-studies.html" title="Technical case studies">Case Studies</a></li>
+            <li><a href="contact.html" title="Contact Faith">Contact</a></li>
+            <li class="nav-cv-item">
+              <a href="documents/faith-lubelihle-ndlovu-cv.pdf" class="nav-cv" download
+                ><i class="fas fa-download"></i> CV</a
+              >
+            </li>
+          </ul>
+
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="work-header reveal">
+        <p class="eyebrow">Technical Case Studies</p>
+        <h1>How I <span class="gradient-text">design &amp; build</span> systems</h1>
+        <p>
+          A closer look at three systems — the problem, the architecture, the
+          decisions behind it, and what was delivered.
+        </p>
+        <div class="cs-jump">
+          <a href="#faithflow">FaithFlow POS</a>
+          <a href="#elearning">E-Learning Platform</a>
+          <a href="#retail-app">Retail Shop App</a>
+        </div>
+      </div>
+
+      <!-- ============ CASE STUDY 1: FAITHFLOW ============ -->
+      <article class="case-study" id="faithflow">
+        <header class="cs-head reveal">
+          <span class="cs-num">01</span>
+          <div>
+            <p class="card-kicker">Full Stack · Web App · Solo build</p>
+            <h2>FaithFlow — Point of Sale &amp; Inventory System</h2>
+            <div class="work-tags mb-0">
+              <span>React 18</span><span>Vite</span><span>Tailwind CSS</span><span>Recharts</span
+              ><span>Node.js</span><span>Express</span><span>SQLite</span><span>JWT</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="row g-4">
+          <div class="col-lg-7 reveal">
+            <div class="cs-block">
+              <h3><i class="fas fa-bullseye"></i> The problem</h3>
+              <p>
+                A retail store needs sales, stock, expenses and reporting in one
+                place, but different staff should only see and do what their job
+                requires, from the cashier at the till to the manager reviewing
+                reports.
+              </p>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-user-gear"></i> My role</h3>
+              <p>
+                I designed and developed the whole system myself, from concept
+                to deployment: the database, the REST API, the React front end,
+                authentication and hosting.
+              </p>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-diagram-project"></i> Key design decisions</h3>
+              <ul class="timeline-points">
+                <li><strong>Role-based access with JWT.</strong> Four roles (Admin, Manager, Cashier, Stock Controller) are carried in a signed token, and every protected API route checks the role, so permissions are enforced on the server, not just hidden in the UI.</li>
+                <li><strong>Separate front end and API.</strong> The React app and Express API are deployed independently (Vercel and Railway), so each can be updated and scaled on its own.</li>
+                <li><strong>SQLite via better-sqlite3.</strong> A lightweight, file-based database that keeps the backend simple to set up and run.</li>
+                <li><strong>Dashboards with Recharts.</strong> Managers get sales and stock insight visually instead of reading raw tables.</li>
+              </ul>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-list-check"></i> What it does</h3>
+              <div class="feature-grid">
+                <span><i class="fas fa-barcode"></i> Barcode scanning</span>
+                <span><i class="fas fa-boxes-stacked"></i> Inventory &amp; stock</span>
+                <span><i class="fas fa-file-invoice"></i> Purchase orders</span>
+                <span><i class="fas fa-heart"></i> Customer loyalty</span>
+                <span><i class="fas fa-image"></i> Product image upload</span>
+                <span><i class="fas fa-file-csv"></i> CSV import</span>
+                <span><i class="fas fa-wallet"></i> Expense tracking</span>
+                <span><i class="fas fa-chart-line"></i> Sales reporting</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 reveal">
+            <div class="cs-side">
+              <div class="browser-frame mb-4">
+                <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+                <img src="images/faithflow.png" alt="FaithFlow sign-in screen showing demo accounts for each role" loading="lazy" />
+              </div>
+              <h3 class="cs-side-title">Architecture</h3>
+              <div class="arch-flow">
+                <div class="arch-node"><i class="fab fa-react"></i><strong>React 18 + Vite</strong><small>Tailwind · Recharts · hosted on Vercel</small></div>
+                <div class="arch-arrow"><span>HTTPS · JSON · Bearer JWT</span></div>
+                <div class="arch-node"><i class="fab fa-node-js"></i><strong>Express REST API</strong><small>Auth + role middleware · hosted on Railway</small></div>
+                <div class="arch-arrow"><span>better-sqlite3</span></div>
+                <div class="arch-node"><i class="fas fa-database"></i><strong>SQLite</strong><small>Products · sales · users · expenses</small></div>
+              </div>
+              <a href="https://faithflow-pos.vercel.app/" target="_blank" rel="noopener" class="btn btn-branding w-100 mt-4"
+                ><i class="fas fa-play me-2"></i>Try the live demo</a
+              >
+              <p class="cs-note">Demo accounts for every role are listed on the sign-in screen.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ CASE STUDY 2: E-LEARNING ============ -->
+      <article class="case-study" id="elearning">
+        <header class="cs-head reveal">
+          <span class="cs-num">02</span>
+          <div>
+            <p class="card-kicker">Full Stack · Backend architecture</p>
+            <h2>E-Learning Platform</h2>
+            <div class="work-tags mb-0">
+              <span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>JWT</span
+              ><span>bcryptjs</span><span>React</span><span>TypeScript</span><span>Winston</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="row g-4">
+          <div class="col-lg-7 reveal">
+            <div class="cs-block">
+              <h3><i class="fas fa-bullseye"></i> The problem</h3>
+              <p>
+                A platform where instructors publish courses and sessions,
+                students enrol, instructors request payouts for what they've
+                earned, and admins approve or reject those payouts. Money is
+                involved, so the rules need to be clear and hard to break.
+              </p>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-diagram-project"></i> Key design decisions</h3>
+              <ul class="timeline-points">
+                <li><strong>Feature modules with clear boundaries.</strong> The API is split into <code>auth</code>, <code>courses</code>, <code>sessions</code>, <code>enrollments</code> and <code>payouts</code>. Each module owns its own table and only talks to another module through its service layer.</li>
+                <li><strong>The 3-layer rule.</strong> Every module has exactly <code>routes → service → repository</code>. Routes handle HTTP only, services hold all business rules, and repositories only run queries. The dependency direction never reverses.</li>
+                <li><strong>Composable authorisation.</strong> Three small middlewares (<code>requireAuth</code>, <code>requireRole('admin')</code> and <code>requireType('instructor' | 'student')</code>) are stacked on each route, so you can see a route's protection at a glance.</li>
+                <li><strong>A balance that's never stored.</strong> An instructor's available balance is calculated from the data every time it's requested, so it can't drift out of sync with sessions and payouts.</li>
+                <li><strong>Separate admin app.</strong> Admin tools live in their own React app rather than behind hidden buttons in the user app.</li>
+              </ul>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-shield-halved"></i> Security &amp; reliability</h3>
+              <p>
+                Passwords are hashed with bcryptjs. Stateless JWTs carry
+                <code>{ id, role, type }</code> and expire after 7 days. All
+                routes share one JSON response format, and key business events
+                are logged with Winston for traceability.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-5 reveal">
+            <div class="cs-side">
+              <h3 class="cs-side-title">Architecture</h3>
+              <div class="arch-flow">
+                <div class="arch-split">
+                  <div class="arch-node"><i class="fas fa-user-graduate"></i><strong>User App</strong><small>Students &amp; instructors</small></div>
+                  <div class="arch-node"><i class="fas fa-user-shield"></i><strong>Admin App</strong><small>Payout approvals</small></div>
+                </div>
+                <div class="arch-arrow"><span>REST · Bearer JWT</span></div>
+                <div class="arch-node arch-layers">
+                  <strong>Express API</strong>
+                  <div class="layer">routes <small>HTTP only</small></div>
+                  <div class="layer">service <small>business rules</small></div>
+                  <div class="layer">repository <small>queries only</small></div>
+                </div>
+                <div class="arch-arrow"><span>pg</span></div>
+                <div class="arch-node"><i class="fas fa-database"></i><strong>PostgreSQL</strong><small>users · courses · sessions · enrollments · payout_requests</small></div>
+              </div>
+              <a href="https://github.com/faithndlovu/elearning-platform" target="_blank" rel="noopener" class="btn btn-branding w-100 mt-4"
+                ><i class="fab fa-github me-2"></i>Read the code &amp; ARCHITECTURE.md</a
+              >
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ CASE STUDY 3: RETAIL SHOP APP ============ -->
+      <article class="case-study" id="retail-app">
+        <header class="cs-head reveal">
+          <span class="cs-num">03</span>
+          <div>
+            <p class="card-kicker">Mobile · Backend · Company project</p>
+            <h2>Retail Shop Management App</h2>
+            <div class="work-tags mb-0">
+              <span>Flutter</span><span>Dart</span><span>PHP 8</span><span>PDO</span><span>MySQL</span><span>REST / JSON</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="row g-4">
+          <div class="col-lg-7 reveal">
+            <div class="cs-block">
+              <h3><i class="fas fa-bullseye"></i> The problem</h3>
+              <p>
+                A retail business was tracking stock and sales manually and
+                wanted to digitise stock management, record sales
+                automatically, and see how the shop was performing from a phone.
+              </p>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-diagram-project"></i> Key design decisions</h3>
+              <ul class="timeline-points">
+                <li><strong>Mobile-first with Flutter.</strong> The shop is managed from a phone, so the client is a Flutter app with bottom navigation and a dashboard of summary cards.</li>
+                <li><strong>A lean Core PHP API.</strong> Plain PHP 8 with PDO and MySQL keeps the backend simple to host and maintain, with one endpoint file per action under <code>api/products</code> and <code>api/sales</code>.</li>
+                <li><strong>Sales update stock automatically.</strong> Recording a sale also deducts the stock in the same request, so inventory stays accurate without a separate step.</li>
+                <li><strong>Clean app layers.</strong> The Flutter code is split into <code>config</code>, <code>models</code>, <code>services</code> and <code>screens</code>. Network calls live in the services, keeping screens focused on the UI.</li>
+              </ul>
+            </div>
+            <div class="cs-block">
+              <h3><i class="fas fa-plug"></i> API endpoints</h3>
+              <div class="endpoint-list">
+                <div><span class="verb">products</span><code>create.php</code> Add product with image (multipart)</div>
+                <div><span class="verb">products</span><code>read.php</code> List all products</div>
+                <div><span class="verb">products</span><code>update.php</code> Edit product</div>
+                <div><span class="verb">products</span><code>delete.php</code> Remove product</div>
+                <div><span class="verb alt">sales</span><code>create.php</code> Record sale and deduct stock</div>
+                <div><span class="verb alt">sales</span><code>read.php</code> Sales history (joined with products)</div>
+                <div><span class="verb alt">sales</span><code>summary.php</code> Dashboard totals</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 reveal">
+            <div class="cs-side">
+              <h3 class="cs-side-title">Architecture</h3>
+              <div class="arch-flow">
+                <div class="arch-node"><i class="fas fa-mobile-screen-button"></i><strong>Flutter App</strong><small>Dashboard · Products · Sales</small></div>
+                <div class="arch-arrow"><span>REST · JSON · multipart images</span></div>
+                <div class="arch-node"><i class="fab fa-php"></i><strong>PHP 8 API</strong><small>PDO · one file per endpoint · image uploads</small></div>
+                <div class="arch-arrow"><span>PDO</span></div>
+                <div class="arch-node"><i class="fas fa-database"></i><strong>MySQL</strong><small>products · sales</small></div>
+              </div>
+              <p class="cs-note mt-4"><i class="fas fa-lock me-1"></i> Built as a company project. Source code is private.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="contact-box d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 reveal">
+        <div>
+          <h3>Want to know more about how I work?</h3>
+          <p class="mb-0">I'm happy to walk through any of these systems in detail.</p>
+        </div>
+        <a href="contact.html" class="btn btn-branding">Get In Touch</a>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="container">
+      <div class="social-links d-flex justify-content-center mb-4">
+        <a href="https://github.com/faithndlovu" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:nfaithlubelihle@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+
+      <p class="footer-note">
+        Designed &amp; developed by Faith Lubelihle Ndlovu &copy; 2026.
+      </p>
+    </footer>
+  </body>
+</html>

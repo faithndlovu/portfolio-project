@@ -11,22 +11,23 @@
     <title>About | Faith Lubelihle Ndlovu</title>
 
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/ddc3ee268a.js"
-      crossorigin="anonymous"
-    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%2360a5fa%22/%3E%3Cstop offset=%221%22 stop-color=%22%2338bdf8%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22url(%23g)%22/%3E%3Ctext x=%2250%22 y=%2270%22 font-size=%2260%22 font-family=%22Arial,sans-serif%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3EF%3C/text%3E%3C/svg%3E"
+    />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
@@ -47,7 +48,13 @@
             <li><a href="index.html" title="Homepage">Home</a></li>
             <li class="active"><a href="about.html" title="About Faith">About</a></li>
             <li><a href="work.html" title="Faith's Work">Work</a></li>
+            <li><a href="case-studies.html" title="Technical case studies">Case Studies</a></li>
             <li><a href="contact.html" title="Contact Faith">Contact</a></li>
+            <li class="nav-cv-item">
+              <a href="documents/faith-lubelihle-ndlovu-cv.pdf" class="nav-cv" download
+                ><i class="fas fa-download"></i> CV</a
+              >
+            </li>
           </ul>
 
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
@@ -66,12 +73,13 @@
         <div class="col-lg-6 reveal">
           <div class="about-card">
             <h1>About Me</h1>
-            <h2>Web Developer &amp; IT Graduate</h2>
+            <h2>Software Developer</h2>
 
             <p class="intro">
-              I'm a developer based in Harare, Zimbabwe, who specializes in
-              front-end development and enjoys turning ideas into clean,
-              responsive, and practical applications.
+              I'm a Software Developer based in Harare, Zimbabwe, currently working
+              as a Software Developer Assistant with Triplepower Engineering. I'm
+              outsourced to different client companies to build web and mobile
+              information systems, and I also teach PHP.
             </p>
 
             <p>
@@ -94,17 +102,18 @@
               <span>React &amp; JavaScript</span>
               <span>Flutter &amp; Dart</span>
               <span>IT Support</span>
+              <span>PHP Teaching</span>
               <span>Problem Solving</span>
             </div>
 
             <div class="about-buttons">
               <a
-                href="documents/Faith_L_Ndlovu_CV.pdf"
+                href="documents/faith-lubelihle-ndlovu-cv.pdf"
                 class="btn btn-branding"
                 target="_blank"
                 download
               >
-                Download CV
+                <i class="fas fa-download"></i> Download CV
               </a>
               <a href="work.html" class="btn btn-branding-outline">
                 View Projects
@@ -121,16 +130,16 @@
       </div>
 
       <!-- SKILLS -->
-      <section class="skills-section reveal">
-        <div class="section-heading">
+      <section class="skills-section">
+        <div class="section-heading reveal">
           <p class="eyebrow">Expertise</p>
           <h2>Skills &amp; Technologies</h2>
           <p>The tools and technologies I use to design, build, and support.</p>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-4" data-stagger>
           <div class="col-md-4">
-            <div class="skill-card">
+            <div class="skill-card spotlight">
               <h3>
                 <span class="skill-icon"><i class="fas fa-code"></i></span>
                 Programming &amp; Web
@@ -145,7 +154,7 @@
           </div>
 
           <div class="col-md-4">
-            <div class="skill-card">
+            <div class="skill-card spotlight">
               <h3>
                 <span class="skill-icon"><i class="fas fa-database"></i></span>
                 Databases &amp; Tools
@@ -158,7 +167,7 @@
           </div>
 
           <div class="col-md-4">
-            <div class="skill-card">
+            <div class="skill-card spotlight">
               <h3>
                 <span class="skill-icon"><i class="fas fa-headset"></i></span>
                 IT Support &amp; Systems
@@ -181,7 +190,28 @@
         </div>
 
         <div class="timeline">
-          <div class="timeline-item">
+          <div class="timeline-item spotlight mb-4">
+            <div class="timeline-meta">Apr 2026 – Present</div>
+            <h3>Software Developer Assistant</h3>
+            <p class="timeline-org">Triplepower Engineering <span class="org-note">· Outsourced to client companies</span></p>
+            <ul class="timeline-points">
+              <li>Placed by Triplepower with different client companies, joining their teams to deliver software for their business needs.</li>
+              <li>Develop web and mobile information systems from requirements gathering through testing and handover.</li>
+              <li>Build features with PHP, Laravel, JavaScript, React, Flutter and MySQL.</li>
+              <li>Develop and integrate REST APIs; design database structures and workflows.</li>
+              <li>Test, debug and deploy applications, and implement client-requested enhancements.</li>
+            </ul>
+          </div>
+          <div class="timeline-item spotlight mb-4">
+            <div class="timeline-meta">Ongoing</div>
+            <h3>PHP Tutor</h3>
+            <p class="timeline-org">Programming lessons</p>
+            <ul class="timeline-points">
+              <li>Teach PHP programming lessons, explaining core concepts clearly and guiding learners through hands-on coding.</li>
+              <li>Help learners build confidence writing, reading and debugging PHP code.</li>
+            </ul>
+          </div>
+          <div class="timeline-item spotlight">
             <div class="timeline-meta">June 2024 – May 2025</div>
             <h3>IT Intern</h3>
             <p class="timeline-org">
@@ -189,7 +219,7 @@
             </p>
             <ul class="timeline-points">
               <li>Deployed and configured desktops and laptops in line with IT standards.</li>
-              <li>Delivered front-line technical support, resolving 20+ user issues daily.</li>
+              <li>Provided technical support for roughly 500+ desktops and 100 laptops.</li>
               <li>Assisted with server, switch, access point, and fibre infrastructure maintenance.</li>
               <li>Managed user accounts and conducted training on newly developed systems.</li>
             </ul>
@@ -206,7 +236,7 @@
 
         <div class="row">
           <div class="col-md-6 mb-4">
-            <div class="resume-card">
+            <div class="resume-card spotlight">
               <h3><i class="fas fa-graduation-cap"></i> Education</h3>
               <ul class="timeline-points">
                 <li>
@@ -222,13 +252,20 @@
           </div>
 
           <div class="col-md-6 mb-4">
-            <div class="resume-card">
+            <div class="resume-card spotlight">
               <h3><i class="fas fa-certificate"></i> Certifications</h3>
               <ul class="timeline-points">
                 <li>SheCodes &mdash; Junior Front-End Developer</li>
                 <li>Cisco &mdash; Introduction to Cybersecurity</li>
                 <li>National Diploma &amp; Certificate in Information Technology</li>
               </ul>
+              <a
+                href="documents/Faith%20L%20Ndlovu%20Cetificates.pdf"
+                target="_blank"
+                rel="noopener"
+                class="project-link mt-2"
+                >View Certificates &rarr;</a
+              >
             </div>
           </div>
         </div>
@@ -242,7 +279,7 @@
       >
         <div>
           <h3>Work Inquiry</h3>
-          <p class="text-muted mb-0">Let's work together</p>
+          <p class="mb-0">Let's work together</p>
         </div>
         <div>
           <a href="contact.html" class="btn btn-branding">Contact Me</a>
@@ -268,7 +305,7 @@
         </a>
       </div>
 
-      <p class="text-center text-muted">
+      <p class="footer-note">
         Designed &amp; developed by Faith Lubelihle Ndlovu &copy; 2026.
       </p>
     </footer>

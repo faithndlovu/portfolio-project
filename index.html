@@ -6,37 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Faith Lubelihle Ndlovu – IT Graduate & Web Developer based in Zimbabwe, building clean interfaces and practical web applications."
+      content="Faith Lubelihle Ndlovu – Software Developer based in Harare, Zimbabwe, building web and mobile applications with PHP, Laravel, React and Flutter."
     />
     <meta
       name="keywords"
-      content="Faith Ndlovu, Web Developer, Laravel Developer, Front-end Developer, Zimbabwe"
+      content="Faith Ndlovu, Software Developer, Web Developer, Laravel Developer, React, Flutter, Zimbabwe"
     />
     <meta name="author" content="Faith Lubelihle Ndlovu" />
 
-    <title>Faith Lubelihle Ndlovu | Web Developer</title>
+    <title>Faith Lubelihle Ndlovu | Software Developer</title>
 
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/ddc3ee268a.js"
-      crossorigin="anonymous"
-    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%2360a5fa%22/%3E%3Cstop offset=%221%22 stop-color=%22%2338bdf8%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22url(%23g)%22/%3E%3Ctext x=%2250%22 y=%2270%22 font-size=%2260%22 font-family=%22Arial,sans-serif%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22%3EF%3C/text%3E%3C/svg%3E"
+    />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
     <link rel="stylesheet" href="styles/portfolio.css" />
+    <script src="projects-data.js"></script>
     <script src="script.js"></script>
   </head>
 
@@ -53,7 +55,13 @@
             <li class="active"><a href="index.html" title="Homepage">Home</a></li>
             <li><a href="about.html" title="About Faith">About</a></li>
             <li><a href="work.html" title="Faith's Work">Work</a></li>
+            <li><a href="case-studies.html" title="Technical case studies">Case Studies</a></li>
             <li><a href="contact.html" title="Contact Faith">Contact</a></li>
+            <li class="nav-cv-item">
+              <a href="documents/faith-lubelihle-ndlovu-cv.pdf" class="nav-cv" download
+                ><i class="fas fa-download"></i> CV</a
+              >
+            </li>
           </ul>
 
           <button
@@ -76,364 +84,488 @@
     </header>
 
     <main>
-      <!-- HERO SECTION -->
-      <section class="hero">
-        <div class="container">
-          <p class="hero-greeting">Hello, I'm</p>
-          <h1 class="gradient-text">Faith Lubelihle Ndlovu</h1>
-          <h2>Web &amp; Mobile Developer &bull; IT Support</h2>
-          <p class="hero-tagline">
-            I craft clean interfaces, build dynamic web and mobile applications,
-            and turn real-world problems into practical, reliable software —
-            based in Harare, Zimbabwe.
-          </p>
+      <!-- 01 · HERO -->
+      <section class="hero" id="top">
+        <div class="starfield" aria-hidden="true"></div>
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <h1 class="hero-title">
+              Hi, I'm Faith<br />
+              <span class="gradient-text">Software Developer</span>
+            </h1>
+            <p class="hero-tagline">
+              I build clean, reliable web and mobile applications — from
+              gathering requirements to testing and deployment. Specialising in
+              full-stack development with PHP, Laravel, React and Flutter, based
+              in Harare, Zimbabwe.
+            </p>
 
-          <div class="hero-buttons">
-            <a href="work.html" class="btn btn-branding">View My Work</a>
-            <a href="contact.html" class="btn btn-branding-outline"
-              >Get In Touch</a
-            >
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-branding"
+                >View My Work <i class="fas fa-arrow-right ms-2"></i
+              ></a>
+              <a href="#contact" class="btn btn-branding-outline"
+                >Get In Touch</a
+              >
+            </div>
+
+            <div class="hero-social">
+              <a
+                href="https://github.com/faithndlovu"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="mailto:nfaithlubelihle@gmail.com" aria-label="Email"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
           </div>
 
-          <div class="hero-social">
-            <a
-              href="https://github.com/faithndlovu"
-              target="_blank"
-              aria-label="GitHub"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b"
-              target="_blank"
-              aria-label="LinkedIn"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a href="mailto:nfaithlubelihle@gmail.com" aria-label="Email"
-              ><i class="fas fa-envelope"></i
-            ></a>
+          <div class="hero-visual">
+            <div class="orb">
+              <img
+                src="images/faith.jpeg"
+                alt="Portrait of Faith Lubelihle Ndlovu"
+              />
+            </div>
+            <span class="orbit-chip oc-1" title="React"
+              ><i class="fab fa-react"></i
+            ></span>
+            <span class="orbit-chip oc-2" title="Laravel"
+              ><i class="fab fa-laravel"></i
+            ></span>
+            <span class="orbit-chip oc-3" title="Flutter (mobile)"
+              ><i class="fas fa-mobile-screen"></i
+            ></span>
+            <span class="orbit-chip oc-4" title="JavaScript"
+              ><i class="fab fa-js"></i
+            ></span>
           </div>
         </div>
+
+        <a href="#about" class="scroll-down" aria-label="Scroll to About">
+          <i class="fas fa-arrow-down"></i>
+        </a>
       </section>
 
-      <!-- STATS -->
-      <section class="stats-section reveal">
+      <!-- 02 · ABOUT -->
+      <section class="home-section" id="about">
         <div class="container">
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-number">4+</div>
-              <div class="stat-label">Certifications</div>
+          <div class="section-heading reveal">
+            <p class="eyebrow">About Me</p>
+            <h2>Turning ideas into <span class="gradient-text">working software</span></h2>
+          </div>
+
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-6 reveal">
+              <div class="about-text">
+                <p class="lead-text">
+                  I'm a Software Developer with a National Diploma in
+                  Information Technology from Bulawayo Polytechnic. I work as a
+                  Software Developer Assistant with Triplepower Engineering,
+                  outsourced to different client companies, and I also teach
+                  PHP.
+                </p>
+                <p>
+                  Being placed with different companies means I adapt quickly to
+                  new teams, codebases and business problems. My day-to-day
+                  involves building web and mobile information systems end to
+                  end — analysing what users need, designing the
+                  database, developing features in PHP, Laravel, React and
+                  Flutter, integrating REST APIs, then testing, debugging and
+                  preparing them for deployment.
+                </p>
+                <p>
+                  I'm most interested in <strong>web and mobile
+                  development</strong>: products people actually use every day,
+                  like the point-of-sale system I designed and deployed from
+                  scratch. Before development, I spent a year in IT support at
+                  NUST, which taught me to think about the person on the other
+                  side of the screen.
+                </p>
+                <a
+                  href="documents/faith-lubelihle-ndlovu-cv.pdf"
+                  class="btn btn-branding mt-2"
+                  target="_blank"
+                  download
+                  ><i class="fas fa-download me-2"></i>Download CV</a
+                >
+              </div>
             </div>
-            <div class="stat-card">
-              <div class="stat-number">6+</div>
+
+            <div class="col-lg-6">
+              <div class="row g-3" data-stagger>
+                <div class="col-sm-6">
+                  <div class="highlight-card spotlight">
+                    <span class="hl-icon"><i class="fas fa-graduation-cap"></i></span>
+                    <h3>Education</h3>
+                    <p>National Diploma in Information Technology — Bulawayo Polytechnic, 2025.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="highlight-card spotlight">
+                    <span class="hl-icon"><i class="fas fa-briefcase"></i></span>
+                    <h3>Experience</h3>
+                    <p>Software Developer Assistant, building web &amp; mobile systems for clients.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="highlight-card spotlight">
+                    <span class="hl-icon"><i class="fas fa-mobile-screen-button"></i></span>
+                    <h3>Interests</h3>
+                    <p>Full-stack web apps, mobile apps with Flutter, and clean, responsive UI.</p>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="highlight-card spotlight">
+                    <span class="hl-icon"><i class="fas fa-lightbulb"></i></span>
+                    <h3>Approach</h3>
+                    <p>Understand the problem first, build in small steps, test thoroughly, then ship.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-grid mt-5" data-stagger>
+            <div class="stat-card spotlight">
+              <div class="stat-number"><span data-count="12">12</span>+</div>
               <div class="stat-label">Projects Built</div>
             </div>
-            <div class="stat-card">
-              <div class="stat-number">1+</div>
-              <div class="stat-label">Year Experience</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">10+</div>
+            <div class="stat-card spotlight">
+              <div class="stat-number"><span data-count="12">12</span>+</div>
               <div class="stat-label">Technologies</div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SERVICES / WHAT I DO -->
-      <section class="services-section reveal">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">What I Do</p>
-            <h2>Services &amp; Expertise</h2>
-            <p>
-              From responsive front-ends to full-stack systems and reliable IT
-              support — I bridge clean design with solid engineering.
-            </p>
-          </div>
-
-          <div class="row g-4">
-            <div class="col-md-4">
-              <div class="service-card">
-                <span class="service-icon"><i class="fas fa-laptop-code"></i></span>
-                <h3>Web Development</h3>
-                <p>
-                  Responsive, accessible websites and web apps built with modern
-                  front-end tools and clean, maintainable code.
-                </p>
-                <div class="service-tags">
-                  <span>HTML</span><span>CSS</span><span>JavaScript</span
-                  ><span>React</span>
-                </div>
-              </div>
+            <div class="stat-card spotlight">
+              <div class="stat-number"><span data-count="4">4</span></div>
+              <div class="stat-label">Certifications</div>
             </div>
-
-            <div class="col-md-4">
-              <div class="service-card">
-                <span class="service-icon"><i class="fas fa-mobile-screen-button"></i></span>
-                <h3>Mobile & Backend</h3>
-                <p>
-                  Cross-platform mobile apps with Flutter and robust back-ends
-                  using PHP, Laravel, and MySQL for real-world systems.
-                </p>
-                <div class="service-tags">
-                  <span>Flutter</span><span>Dart</span><span>Laravel</span
-                  ><span>MySQL</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="service-card">
-                <span class="service-icon"><i class="fas fa-headset"></i></span>
-                <h3>IT Support</h3>
-                <p>
-                  Hands-on technical support, hardware deployment, and network
-                  troubleshooting — keeping systems running smoothly.
-                </p>
-                <div class="service-tags">
-                  <span>Networking</span><span>Hardware</span
-                  ><span>Windows</span><span>Support</span>
-                </div>
-              </div>
+            <div class="stat-card spotlight">
+              <div class="stat-number"><span data-count="3">3</span></div>
+              <div class="stat-label">Professional Roles</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- TECH STACK -->
-      <section class="tech-section reveal">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">My Toolkit</p>
-            <h2>Technologies I Work With</h2>
-          </div>
-          <div class="tech-grid">
-            <span class="tech-chip"><i class="fab fa-html5"></i> HTML5</span>
-            <span class="tech-chip"><i class="fab fa-css3-alt"></i> CSS3</span>
-            <span class="tech-chip"><i class="fab fa-js"></i> JavaScript</span>
-            <span class="tech-chip"><i class="fab fa-react"></i> React.js</span>
-            <span class="tech-chip"><i class="fab fa-php"></i> PHP</span>
-            <span class="tech-chip"><i class="fab fa-laravel"></i> Laravel</span>
-            <span class="tech-chip"
-              ><i class="fas fa-mobile-screen"></i> Flutter &amp; Dart</span
-            >
-            <span class="tech-chip"><i class="fas fa-code"></i> VB.NET</span>
-            <span class="tech-chip"><i class="fas fa-database"></i> MySQL</span>
-            <span class="tech-chip"
-              ><i class="fab fa-git-alt"></i> Git &amp; GitHub</span
-            >
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section class="projects">
+      <!-- 03 · FEATURED PROJECTS -->
+      <section class="home-section projects-band" id="projects">
+        <div class="starfield" aria-hidden="true"></div>
         <div class="container">
           <div class="section-heading reveal">
             <p class="eyebrow">Portfolio</p>
-            <h2>Selected Work</h2>
+            <h2>Featured <span class="gradient-text">Projects</span></h2>
             <p>
-              A selection of projects showcasing my experience designing clean
-              interfaces, building dynamic applications, and developing
-              practical real-world solutions.
+              Live web and mobile apps I have designed, built and deployed, each with its source code on GitHub.
             </p>
           </div>
 
-          <!-- FAITHFLOW POS -->
-          <article class="row project-item reveal">
-            <div class="col-lg-6 order-lg-2">
-              <img
-                src="images/faithflow.png"
-                class="img-fluid project-image"
-                alt="FaithFlow Point of Sale sign-in screen"
-              />
-            </div>
-            <div class="col-lg-6 order-lg-1">
-              <div class="project-content">
-                <h3>FaithFlow — Point of Sale System</h3>
-                <p>
-                  A full point-of-sale web application with role-based access for
-                  administrators, managers, cashiers, and stock controllers —
-                  handling sales, inventory, and store management. Deployed live
-                  on Vercel.
-                </p>
-                <div class="service-tags mb-3">
-                  <span>Web App</span><span>POS System</span
-                  ><span>Role-Based Access</span>
-                </div>
-                <a
-                  href="https://faithflow-pos.vercel.app/"
-                  target="_blank"
-                  class="project-link"
-                >
-                  View Live Demo &rarr;
-                </a>
-              </div>
-            </div>
-          </article>
+          <div class="row g-4" id="featured-grid" data-stagger></div>
 
-          <!-- SATS -->
-          <article class="row project-item reveal">
-            <div class="col-lg-6">
-              <img
-                src="images/sats.png"
-                class="img-fluid project-image"
-                alt="Student Attachment Tracking System screenshot"
-              />
-            </div>
-            <div class="col-lg-6">
-              <div class="project-content">
-                <h3>Student Attachment Tracking System (SATS)</h3>
-                <p>
-                  A full-stack web application built with Laravel and MySQL to
-                  manage student attachments, placements, supervisor feedback,
-                  and reporting workflows — streamlining a previously manual
-                  process.
-                </p>
-                <div class="service-tags mb-3">
-                  <span>Laravel</span><span>MySQL</span><span>Full-Stack</span>
-                </div>
-                <a
-                  href="https://github.com/faithndlovu/student-attachment-tracking-system"
-                  target="_blank"
-                  class="project-link"
-                >
-                  View Project Details &rarr;
-                </a>
-              </div>
-            </div>
-          </article>
 
-          <!-- POEM GENERATOR -->
-          <article class="row project-item reveal">
-            <div class="col-lg-6 order-lg-2">
-              <img
-                src="images/poemgenerator.png"
-                class="img-fluid project-image"
-                alt="AI Poem Generator screenshot"
-              />
-            </div>
-            <div class="col-lg-6 order-lg-1">
-              <div class="project-content">
-                <h3>AI Poem Generator</h3>
-                <p>
-                  A front-end application that integrates an AI API to generate
-                  creative, context-aware text responses from user prompts, with
-                  a clean and responsive interface.
-                </p>
-                <div class="service-tags mb-3">
-                  <span>JavaScript</span><span>AI API</span><span>UI Design</span>
-                </div>
-                <a
-                  href="https://github.com/faithndlovu/Poem-generator"
-                  target="_blank"
-                  class="project-link"
-                >
-                  View Project &rarr;
-                </a>
-              </div>
-            </div>
-          </article>
+          <div class="text-center mt-5 reveal">
+            <a href="work.html" class="btn btn-branding-outline">
+              See All Projects <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </section>
 
-          <!-- TRAVEL PROJECT -->
-          <article class="row project-item reveal">
-            <div class="col-lg-6">
-              <img
-                src="images/travel.png"
-                class="img-fluid project-image"
-                alt="Victoria Falls Travel Project screenshot"
-              />
-            </div>
-            <div class="col-lg-6">
-              <div class="project-content">
-                <h3>Victoria Falls Travel Project</h3>
-                <p>
-                  A responsive travel website showcasing destination content
-                  for Victoria Falls, with thoughtful layout, imagery, and a
-                  modern, mobile-friendly UI.
-                </p>
-                <div class="service-tags mb-3">
-                  <span>HTML</span><span>CSS</span><span>Responsive</span>
-                </div>
-                <a
-                  href="https://github.com/faithndlovu/vic-falls-travel-project"
-                  target="_blank"
-                  class="project-link"
-                >
-                  View Project &rarr;
-                </a>
-              </div>
-            </div>
-          </article>
+      <!-- 04 · SKILLS -->
+      <section class="home-section" id="skills">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Expertise</p>
+            <h2>Skills &amp; <span class="gradient-text">Technologies</span></h2>
+            <p>The tools I use to design, build, test and support software.</p>
+          </div>
 
-          <!-- DICTIONARY -->
-          <article class="row project-item reveal">
-            <div class="col-lg-6 order-lg-2">
-              <img
-                src="images/dictionary.png"
-                class="img-fluid project-image"
-                alt="Dictionary App screenshot"
-              />
-            </div>
-            <div class="col-lg-6 order-lg-1">
-              <div class="project-content">
-                <h3>Dictionary Application</h3>
-                <p>
-                  A dynamic React application that integrates a dictionary API
-                  to retrieve real-time word meanings, phonetics, example usage,
-                  and related results as you search.
-                </p>
-                <div class="service-tags mb-3">
-                  <span>React</span><span>API Integration</span><span>JavaScript</span>
+          <div class="row g-4" data-stagger>
+            <div class="col-lg-3 col-md-6">
+              <div class="skill-card spotlight">
+                <h3>
+                  <span class="skill-icon"><i class="fas fa-code"></i></span>
+                  Development
+                </h3>
+                <div class="skill-chips">
+                  <span>PHP</span><span>Laravel</span><span>JavaScript</span
+                  ><span>React.js</span><span>Flutter</span><span>Dart</span
+                  ><span>HTML</span><span>CSS</span><span>REST APIs</span
+                  ><span>VB.NET</span><span>C++</span>
                 </div>
-                <a
-                  href="https://github.com/faithndlovu/dictionary-proj"
-                  target="_blank"
-                  class="project-link"
-                >
-                  View Project &rarr;
-                </a>
               </div>
             </div>
-          </article>
+            <div class="col-lg-3 col-md-6">
+              <div class="skill-card spotlight">
+                <h3>
+                  <span class="skill-icon"><i class="fas fa-gears"></i></span>
+                  Engineering
+                </h3>
+                <div class="skill-chips">
+                  <span>System Testing</span><span>Debugging</span
+                  ><span>Git &amp; GitHub</span><span>API Integration</span
+                  ><span>Responsive UI</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="skill-card spotlight">
+                <h3>
+                  <span class="skill-icon"><i class="fas fa-database"></i></span>
+                  Data &amp; Tools
+                </h3>
+                <div class="skill-chips">
+                  <span>MySQL</span><span>Database Design</span
+                  ><span>phpMyAdmin</span><span>MySQL Workbench</span
+                  ><span>XAMPP</span><span>Postman</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="skill-card spotlight">
+                <h3>
+                  <span class="skill-icon"><i class="fas fa-network-wired"></i></span>
+                  IT &amp; Infra
+                </h3>
+                <div class="skill-chips">
+                  <span>Windows Admin</span><span>Active Directory</span
+                  ><span>Network Support</span><span>Cisco APs</span
+                  ><span>Remote Support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 · EXPERIENCE -->
+      <section class="home-section" id="experience">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Career</p>
+            <h2>Professional <span class="gradient-text">Experience</span></h2>
+          </div>
+
+          <div class="xp-timeline">
+            <div class="xp-item reveal">
+              <span class="xp-dot"></span>
+              <div class="timeline-item spotlight">
+                <div class="timeline-meta">
+                  <span class="status-dot"></span> Apr 2026 – Present
+                </div>
+                <h3>Software Developer Assistant</h3>
+                <p class="timeline-org">
+                  Triplepower Engineering
+                  <span class="org-note">· Outsourced to client companies</span>
+                </p>
+                <ul class="timeline-points">
+                  <li>Placed by Triplepower with different client companies, joining their teams to deliver software for their business needs.</li>
+                  <li>Develop web and mobile information systems from requirements gathering through development, testing and handover.</li>
+                  <li>Build features with PHP, Laravel, JavaScript, React, Flutter and MySQL, and design the database structures and workflows behind them.</li>
+                  <li>Develop and integrate REST APIs connecting applications to backend systems.</li>
+                  <li>Test, debug and deploy applications for client testing and production, and implement client-requested enhancements.</li>
+                  <li>Manage code with Git &amp; GitHub and produce technical documentation and progress reports.</li>
+                </ul>
+                <div class="work-tags mb-0">
+                  <span>Laravel</span><span>React</span><span>Flutter</span
+                  ><span>MySQL</span><span>REST APIs</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="xp-item reveal">
+              <span class="xp-dot"></span>
+              <div class="timeline-item spotlight">
+                <div class="timeline-meta">
+                  <span class="status-dot"></span> Ongoing
+                </div>
+                <h3>PHP Tutor</h3>
+                <p class="timeline-org">Programming lessons</p>
+                <ul class="timeline-points">
+                  <li>Teach PHP programming lessons, explaining core concepts clearly and guiding learners through hands-on coding.</li>
+                  <li>Help learners build confidence writing, reading and debugging PHP code.</li>
+                </ul>
+                <div class="work-tags mb-0">
+                  <span>PHP</span><span>Teaching</span><span>Mentoring</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="xp-item reveal">
+              <span class="xp-dot"></span>
+              <div class="timeline-item spotlight">
+                <div class="timeline-meta">Jun 2024 – May 2025</div>
+                <h3>IT Intern · Industrial Attachment</h3>
+                <p class="timeline-org">
+                  National University of Science and Technology (NUST)
+                </p>
+                <ul class="timeline-points">
+                  <li>Supported roughly 500+ desktop computers and 100 laptops across the university.</li>
+                  <li>Diagnosed and resolved hardware, software, printer and network issues for daily support requests.</li>
+                  <li>Installed and configured Windows, software applications and network printers.</li>
+                  <li>Assisted with network infrastructure: switches, PoE equipment, fibre, and Cisco access points.</li>
+                </ul>
+                <div class="work-tags mb-0">
+                  <span>IT Support</span><span>Networking</span
+                  ><span>Windows</span><span>Cisco</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 · EDUCATION & CERTIFICATIONS -->
+      <section class="home-section" id="education">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Qualifications</p>
+            <h2>Education &amp; <span class="gradient-text">Certifications</span></h2>
+          </div>
+
+          <div class="row g-4" data-stagger>
+            <div class="col-md-6">
+              <div class="resume-card spotlight">
+                <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                <div class="edu-item">
+                  <strong>National Diploma in Information Technology</strong>
+                  <span>Bulawayo Polytechnic · 2025</span>
+                </div>
+                <div class="edu-item">
+                  <strong>National Certificate in Information Technology</strong>
+                  <span>Bulawayo Polytechnic · 2023</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="resume-card spotlight">
+                <h3><i class="fas fa-certificate"></i> Certifications</h3>
+                <div class="edu-item">
+                  <strong>Cisco — Introduction to Cybersecurity</strong>
+                  <span>Cisco Networking Academy</span>
+                </div>
+                <div class="edu-item">
+                  <strong>SheCodes — Junior Front-End Developer</strong>
+                  <span>HTML, CSS, JavaScript, React, APIs</span>
+                </div>
+                <a
+                  href="documents/Faith%20L%20Ndlovu%20Cetificates.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link mt-2"
+                  >View Certificates <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 · CONTACT -->
+      <section class="home-section" id="contact">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Contact</p>
+            <h2>Let's <span class="gradient-text">work together</span></h2>
+            <p>
+              Have a project, a role or an idea? Reach out through any channel
+              below or send me a message directly.
+            </p>
+          </div>
+
+          <div class="row g-4 align-items-stretch">
+            <div class="col-lg-5">
+              <div class="contact-list" data-stagger>
+                <a class="contact-row spotlight" href="mailto:nfaithlubelihle@gmail.com">
+                  <span class="hl-icon"><i class="fas fa-envelope"></i></span>
+                  <span><small>Email</small>nfaithlubelihle@gmail.com</span>
+                </a>
+                <a
+                  class="contact-row spotlight"
+                  href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class="hl-icon"><i class="fab fa-linkedin-in"></i></span>
+                  <span><small>LinkedIn</small>Faith Lubelihle Ndlovu</span>
+                </a>
+                <a
+                  class="contact-row spotlight"
+                  href="https://github.com/faithndlovu"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class="hl-icon"><i class="fab fa-github"></i></span>
+                  <span><small>GitHub</small>github.com/faithndlovu</span>
+                </a>
+                <div class="contact-row">
+                  <span class="hl-icon"><i class="fas fa-location-dot"></i></span>
+                  <span><small>Location</small>Harare, Zimbabwe</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7 reveal">
+              <div class="contact-form-wrapper m-0">
+                <h2>Send a Message</h2>
+                <p class="form-subtitle">I'll get back to you as soon as I can.</p>
+                <form
+                  id="contact-form"
+                  action="https://formspree.io/f/mzdqrybz"
+                  method="POST"
+                >
+                  <div class="row g-3">
+                    <div class="col-sm-6">
+                      <input type="text" name="name" class="form-control-custom" placeholder="Your Name" aria-label="Your name" required />
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="email" name="email" class="form-control-custom" placeholder="Your Email" aria-label="Your email" required />
+                    </div>
+                  </div>
+                  <input type="text" name="subject" class="form-control-custom" placeholder="Subject" aria-label="Subject" />
+                  <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                  <textarea name="message" class="form-control-custom" placeholder="Your Message" aria-label="Your message" required></textarea>
+                  <button type="submit" class="btn btn-branding w-100">
+                    Send Message
+                  </button>
+                  <p id="form-status" class="form-status" role="status"></p>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
     <!-- FOOTER -->
     <footer class="container">
-      <div
-        class="contact-box d-flex justify-content-between align-items-center mb-5 d-none d-md-flex"
-      >
-        <div>
-          <h3>Work Inquiry</h3>
-          <p class="text-muted mb-0">Let's work together</p>
-        </div>
-        <div>
-          <a href="contact.html" class="btn btn-branding">Contact Me</a>
-        </div>
-      </div>
-
-      <div class="d-flex justify-content-center mb-4">
-        <a href="mailto:nfaithlubelihle@gmail.com" class="email-link">
-          nfaithlubelihle@gmail.com
-        </a>
-      </div>
-
       <div class="social-links d-flex justify-content-center mb-4">
-        <a href="https://github.com/faithndlovu" target="_blank" aria-label="GitHub">
+        <a href="https://github.com/faithndlovu" target="_blank" rel="noopener" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
         <a
           href="https://www.linkedin.com/in/faith-lubelihle-ndlovu-0a189824b"
           target="_blank"
+          rel="noopener"
           aria-label="LinkedIn"
         >
-          <i class="fab fa-linkedin"></i>
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:nfaithlubelihle@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
         </a>
       </div>
 
-      <p class="text-center text-muted">
+      <p class="footer-note">
         Designed &amp; developed by Faith Lubelihle Ndlovu &copy; 2026.
       </p>
     </footer>
